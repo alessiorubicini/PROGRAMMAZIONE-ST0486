@@ -1,0 +1,43 @@
+/*
+ * Prende la rappresentazione di 1 e sposta i bit in blocco di 2 posizioni
+ * Spostando a sinistra di 1 bit è come se moltiplicassi per 2
+ * Spostando a destra di 1 bit è come se dividessi per 2
+ * Rappresentazione posizionale: un simbolo a seconda di dove si trova ha un valore diverso
+*/
+// System.out.println(1456<<1); // Moltiplica 1456 per 2
+// System.out.println(2912>>1); // Divide 2912 per 2
+// System.out.println(-16>>1);  // Sposto i bit a destra (il bit 1 del segno rimane lì)
+ 
+// Formula di Gauss
+int gauss1(int n) { return n*(n+1)/2; }
+int gauss2(int n) {
+	int i = 0;
+	int somma = 0;
+	
+	while(i <= n) {
+		somma += i;
+		i++;
+	}
+	
+	return somma;
+}
+
+double f(double x) { return 3*x*x+2*x+1; }
+double retta(double x) { return x;}
+double costante(double x) { return 10.0;}
+double integrale(double a, double b) {
+	double dx = 0.0001;
+	double x = a;	
+	double i = 0.0;
+	
+	while(x < b) {
+		x = x + dx;
+		i = i + f(x) * dx;
+	}
+	
+	return i;	
+}
+
+System.out.println(gauss1(100));
+System.out.println(gauss2(100));
+System.out.println(integrale(1, 100));

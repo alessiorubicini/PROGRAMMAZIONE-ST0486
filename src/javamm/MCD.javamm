@@ -1,0 +1,31 @@
+int getInteger() {	
+	int n = 0;
+	
+	do {
+		n = Input.getInt("Inserisci un numero intero maggiore di 0");		
+	} while (n <= 0);
+	
+	return n;
+}
+
+int MCD(int a, int b) {
+	int mcd = 0;
+	int r = 0;
+	
+	while (b != 0) {
+		r = a%b;
+		a = b;
+		b = r;
+	}
+	
+	mcd = a;
+	return mcd;
+}
+
+int a = 0;
+int b = 0;
+
+a = getInteger();
+b = getInteger();
+
+System.out.println("L'MCD tra " + a + " e " + b + " è " + MCD(a, b));

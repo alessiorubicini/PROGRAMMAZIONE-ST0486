@@ -1,0 +1,55 @@
+int anno (int d) {
+	return d/10000;
+}
+
+int mese (int d) {
+	return (d/100)%100;
+}
+
+int giorno (int d) {
+	return d%100;
+}
+
+int giorniMese(int mm, boolean bisestile) {
+	switch (mm) {
+		case 11:
+		case 4:
+		case 6:
+		case 9:
+	      return 30;
+	   case 2:
+	      if(bisestile) {
+	      return 29;
+	      }else {
+	      return 28;
+	      }
+	      default:
+	          return 31;
+	}
+}
+
+boolean bisestile (int yyyy) {
+	return ( (yyyy%4==0) && ((yyyy%100!=0)||(yyyy%100==0)) );
+}
+
+boolean corretta (int d){
+	int yyyy = anno(d);
+	int mm = mese(d);
+	int dd = giorno(d);
+	
+	if(yyyy<1900) {
+		return false;
+	}
+	
+	if ((mm<1)||(mm>12)) {
+		return false;
+	}
+	
+	if ((dd<1)||(dd>giorniMese(mm, bisestile(yyyy)))) {
+		return false;
+	}
+	
+	return true;
+}
+
+int date = Input.getInt("Inserisci una data nel formato YYYYMMDD");

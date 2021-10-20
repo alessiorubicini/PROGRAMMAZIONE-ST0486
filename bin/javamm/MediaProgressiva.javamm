@@ -1,0 +1,27 @@
+// Lezione 19 ottobre 2021
+// Media progressiva
+
+int i = 0;			// Nuovo numero in input
+int n = 0;			// Contatore di numeri inseriti
+double m = 0.0;		// Media calcolata in output
+
+do {
+	
+	// Prende in input il numero
+	i = Input.getInt("Inserisci un intero o 0 per terminare");
+	
+	// Controllo dell'input
+	if (i == 0) break;
+	
+	// Calcola la media tra il risultato precedente e il nuovo numero
+	m = (n * m + i) / (n + 1);
+	
+	// Incrementa il contatore dei numeri inseriti
+	n++;
+	
+	// Restituisce in input il risultato
+	System.out.println("La media è " + m);
+	
+} while (i != 0);
+
+System.out.println("Programma terminato");
