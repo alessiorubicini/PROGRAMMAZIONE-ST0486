@@ -1,0 +1,54 @@
+// Università di Camerino - Programmazione ST0486 2021/22 
+// Lezione 22 ottobre 2021
+/*
+ * Realizzare il metodo creaDNA che produca una catena
+ * DNA con valori casuali di 'A', 'T', 'C', 'G'.
+ * Il parametro intero n definisce la lunghezza della catena.
+ */
+ 
+char[] creaDNA(int n) {
+	
+	// Dichiarazione e inizializzazione array di n elementi
+	char[] risultato = new char[n];
+	int random;
+	
+	for(int i = 0; i < risultato.length; i++) {
+		// Assegna all'elemento un carattere random
+		random = (int)(Math.random() * 5);
+		
+		switch (random) {
+			case 1:
+				risultato[i] = 'A';
+				break;
+			case 2:
+				risultato[i] = 'T';
+				break;
+			case 3:
+				risultato[i] = 'C';
+				break;
+			case 4:
+				risultato[i] = 'G';
+				break;
+			default:
+				break;
+		}
+	}
+	
+	return risultato;
+}
+
+void stampaDNA(char[] dna) {
+	System.out.print("[");
+	for(int k = 0; k < dna.length; k++) {
+		// Stampa il carattere della proteina
+		System.out.print(dna[k]);
+		// Se non si tratta dell'ultimo elemento stampa un carattere separatore ','
+		// Questo è a mero scopo di formattazione dell'output sulla console
+		if(k != dna.length - 1) System.out.print(",");
+	}
+	System.out.print("]");
+}
+
+int n = Input.getInt("Inserisci un valore n > 0");
+char[] dna = creaDNA(n);
+stampaDNA(dna);

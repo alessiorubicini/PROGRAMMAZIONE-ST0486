@@ -1,0 +1,38 @@
+// Università di Camerino - Programmazione ST0486 2021/22 
+// Lezione 22 ottobre 2021
+// Numer primi: tecnica del crivello di Eratostene
+
+boolean[] eratostene(boolean[] vettore) {
+	
+	// Analizza gli elementi del vettore uno per uno
+	for(int i = 2; i < vettore.length; i++) {
+		// Controlla se il numero è primo
+		if(vettore[i] == true) {
+			// Elimina tutti i multiplil del numero i in questione assegnando false
+			for(int j = i*2; j < vettore.length; j += i)  {
+				vettore[j] = false;
+			}			
+		}
+	}
+	
+	return vettore;
+}
+
+void stampaRisultato(boolean[] vettore) {
+	System.out.print("[");
+	for(int k = 2; k < vettore.length; k++) {
+		if(vettore[k] == true) {
+			System.out.print(k + ",");
+		}
+	}
+	System.out.print("]");
+}
+
+int n = Input.getInt("Inserisci n");
+
+// Inizializzazione del vettore
+boolean[] numeri = new boolean[n];
+for(int i = 0; i < numeri.length; i++) {
+	numeri[i] = true;
+}
+stampaRisultato(eratostene(numeri));
