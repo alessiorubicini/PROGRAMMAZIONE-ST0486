@@ -3,7 +3,7 @@ package javamm;
 import javamm.util.Input;
 
 @SuppressWarnings("all")
-public class NumeriPrimi {
+public class Eratostene {
   public static boolean[] eratostene(boolean[] vettore) {
     for (int i = 2; (i < vettore.length); i++) {
       boolean _tripleEquals = (Boolean.valueOf(vettore[i]) == Boolean.valueOf(true));
@@ -43,6 +43,6 @@ public class NumeriPrimi {
     for (int i = 0; (i < numeri.length); i++) {
       numeri[i] = true;
     }
-    NumeriPrimi.stampaRisultato(NumeriPrimi.eratostene(numeri));
+    Eratostene.stampaRisultato(Eratostene.eratostene(numeri));
   }
 }
