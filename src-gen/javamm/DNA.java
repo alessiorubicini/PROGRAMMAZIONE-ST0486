@@ -16,7 +16,8 @@ public class DNA {
       {
         double _random = Math.random();
         double _multiply = (_random * 5);
-        random = ((int) _multiply);
+        double _plus = (_multiply + 1);
+        random = ((int) _plus);
         switch (random) {
           case 1:
             risultato[i] = 'A';
