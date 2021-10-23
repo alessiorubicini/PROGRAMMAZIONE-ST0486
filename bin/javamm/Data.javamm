@@ -59,6 +59,8 @@ int data(int anno, int mese, int giorno) {
 	return (anno * 10000) + (mese * 100) + (giorno);
 }
 
+boolean negativo(int n) { return (n < 0) ? true : false; }
+
 // Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d+n giorni.
 int aggiungiGiorni(int data, int n) {
 	int giorni = giorno(data);
@@ -103,6 +105,29 @@ int sottraiGiorni(int data, int n) {
 	return data(anno, mese, giorni);
 }
 
+// Data una data in formato numerico aggiunge o sottrae n giorni in base al segno di n stesso
+int sommaSottraiGiorni(int data, int n) {
+	int giorni = giorno(data);
+	int mese = mese(data);
+	int anno = anno(data);
+	int i = 0;
+	
+	while(negativo(n) ? (i != -n) : (i != n)) {
+		negativo(n) ? giorni-- : giorni ++;
+		if(negativo(n) ? giorni < 1 : giorni > giorniMese(mese(data), bisestile(anno(data)))) {
+			negativo(n) ? giorni = giorniMese(mese(data), bisestile(anno(data))) : giorni = 1;
+			negativo(n) ? mese-- : mese++;
+		}
+		if(negativo(n) ? mese < 0 : mese > 12) {
+			negativo(n) ? mese = 12 : mese = 1;
+			negativo(n) ? anno-- : anno++;
+		}
+		i++;
+	} 
+	
+	return data(anno, mese, giorni);
+}
+
 // Restituisce la data temporalmente maggiore tra le due
 int dataMaggiore(int d1, int d2) {
 	if(anno(d1) > anno(d2)) {
@@ -138,6 +163,6 @@ int differenzaGiorni(int d1, int d2) {
 	return i;
 }
 
-System.out.println(differenzaGiorni(20211101, 20211022));
-System.out.println(differenzaGiorni(20211022, 20211101));
+System.out.println(sommaSottraiGiorni(20211023, 2));
+System.out.println(sommaSottraiGiorni(20211023, -2));
 

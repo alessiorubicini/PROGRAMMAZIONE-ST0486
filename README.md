@@ -1,8 +1,8 @@
 # Programmazione ST0486 2021/22
 ## Università degli Studi di Camerino
 
-Questa repository contiene le esercitazioni svolte nel corso Programmazione ST0486 dell'anno 2021/22
-ed è mantenuta dallo studente Alessio Rubicini.
+Questa repository contiene le esercitazioni svolte nel corso Programmazione ST0486 dei corsi di Informatica e Informatica
+per la comunicazione digitale dell'anno 2021/22 ed è mantenuta dallo studente Alessio Rubicini.
 
 **La presente NON È una repository ufficiale dei docenti e non è in alcun modo affiliata all'Ateneo.**
 
