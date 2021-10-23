@@ -1,0 +1,143 @@
+/**
+ * Manipolazione di date in formato numerico
+ * 14/10/2021
+ * Esercizio iniziato da Michele Loreti e continuato da Alessio Rubicini
+ */
+int anno(int d) {
+	return d/10000;
+}
+
+int mese(int d) {
+	return (d/100)%100;
+}
+
+int giorno(int d) {
+	return d%100;
+}
+
+int giorniMese(int mm, boolean bisestile) {
+	switch (mm) {
+		case 11:
+		case 4:
+		case 6:
+		case 9:
+			return 30;
+		case 2:
+			if (bisestile) {
+				return 29;
+			} else {
+				return 28;
+			}
+		default:
+			return 31;
+	}
+}
+
+boolean bisestile(int yyyy) {
+	return (yyyy%4==0)&&((yyyy%100!=0)||(yyyy%400==0));
+}
+
+boolean corretta(int d) {
+	int yyyy = anno(d);
+	int mm = mese(d);
+	int dd = giorno(d);
+	if (yyyy<1900) {
+		return false;
+	}
+	if ((mm<1)||(mm>12)) {
+		return false;
+	}
+	if ((dd<1)||(dd>giorniMese(mm,bisestile(yyyy)))) {
+		return false;
+	}
+	return true;
+}
+
+
+// A partire da anno mese e giorno separati, restituisce la data completa in formato numerico
+int data(int anno, int mese, int giorno) {
+	return (anno * 10000) + (mese * 100) + (giorno);
+}
+
+// Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d+n giorni.
+int aggiungiGiorni(int data, int n) {
+	int giorni = giorno(data);
+	int mese = mese(data);
+	int anno = anno(data);
+	int i = 0;
+	
+	while(i != n) {
+		giorni ++;
+		if(giorni > giorniMese(mese(data), bisestile(anno(data)))) {
+			giorni = 1;
+			mese++;
+		}
+		if(mese > 12) {
+			mese = 1;
+			anno++;
+		}
+		i++;
+	} 	
+	
+	return data(anno, mese, giorni);
+}
+
+// Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d-n giorni.
+int sottraiGiorni(int data, int n) {
+	int giorni = giorno(data);
+	int mese = mese(data);
+	int anno = anno(data);
+	int i = 0;
+	while(i != n) {
+		giorni --;
+		if(giorni < 0) {
+			mese--;
+			giorni = giorniMese(mese, bisestile(anno));
+		}
+		if(mese < 1) {
+			mese = 12;
+			anno--;
+		}
+		i++;
+	}	
+	return data(anno, mese, giorni);
+}
+
+// Restituisce la data temporalmente maggiore tra le due
+int dataMaggiore(int d1, int d2) {
+	if(anno(d1) > anno(d2)) {
+		return d1;
+	} else if (anno(d1) == anno(d2) && mese(d1) > mese(d2)) {
+		return d1;
+	} else if (anno(d1) == anno(d2) && mese(d1) == mese(d2) && giorno(d1) > giorno(d2)) {
+		return d1;
+	} else {
+		return d2;
+	}
+}
+
+// Date due date d1 e d2 in intero, determinare la differenza in giorni
+int differenzaGiorni(int d1, int d2) {
+	int i = 0;
+	int data = dataMaggiore(d1, d2);
+	int giorno = giorno(data);
+	int mese = mese(data);
+	int anno = anno(data);
+	while(data(anno, mese, giorno) != (data == d1 ? d2 : d1)) {
+		giorno --;
+		if(giorno < 0) {
+			giorno = giorniMese(data, bisestile(anno));
+			mese--;
+		}
+		if(mese < 0) {
+			mese = 12;
+			anno--;
+		}
+		i++;
+	} 	
+	return i;
+}
+
+System.out.println(differenzaGiorni(20211101, 20211022));
+System.out.println(differenzaGiorni(20211022, 20211101));
+

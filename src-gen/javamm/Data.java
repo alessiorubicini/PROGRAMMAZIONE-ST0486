@@ -1,9 +1,11 @@
 package javamm;
 
 @SuppressWarnings("all")
-public class CorrectDate {
+public class Data {
   /**
-   * Esercizio da completare.
+   * Manipolazione di date in formato numerico
+   * 14/10/2021
+   * Esercizio iniziato da Michele Loreti e continuato da Alessio Rubicini
    */
   public static int anno(int d) {
     return (d / 10000);
@@ -40,16 +42,16 @@ public class CorrectDate {
   }
   
   public static boolean corretta(int d) {
-    int yyyy = CorrectDate.anno(d);
-    int mm = CorrectDate.mese(d);
-    int dd = CorrectDate.giorno(d);
+    int yyyy = Data.anno(d);
+    int mm = Data.mese(d);
+    int dd = Data.giorno(d);
     if ((yyyy < 1900)) {
       return false;
     }
     if (((mm < 1) || (mm > 12))) {
       return false;
     }
-    if (((dd < 1) || (dd > CorrectDate.giorniMese(mm, CorrectDate.bisestile(yyyy))))) {
+    if (((dd < 1) || (dd > Data.giorniMese(mm, Data.bisestile(yyyy))))) {
       return false;
     }
     return true;
@@ -59,34 +61,15 @@ public class CorrectDate {
     return (((anno * 10000) + (mese * 100)) + giorno);
   }
   
-  public static int dataMaggiore(int d1, int d2) {
-    int _anno = CorrectDate.anno(d1);
-    int _anno_1 = CorrectDate.anno(d2);
-    boolean _greaterThan = (_anno > _anno_1);
-    if (_greaterThan) {
-      return d1;
-    } else {
-      if (((CorrectDate.anno(d1) == CorrectDate.anno(d2)) && (CorrectDate.mese(d1) > CorrectDate.mese(d2)))) {
-        return d1;
-      } else {
-        if ((((CorrectDate.anno(d1) == CorrectDate.anno(d2)) && (CorrectDate.mese(d1) == CorrectDate.mese(d2))) && (CorrectDate.giorno(d1) > CorrectDate.giorno(d2)))) {
-          return d1;
-        } else {
-          return d2;
-        }
-      }
-    }
-  }
-  
   public static int aggiungiGiorni(int data, int n) {
-    int giorni = CorrectDate.giorno(data);
-    int mese = CorrectDate.mese(data);
-    int anno = CorrectDate.anno(data);
+    int giorni = Data.giorno(data);
+    int mese = Data.mese(data);
+    int anno = Data.anno(data);
     int i = 0;
     while ((i != n)) {
       {
         giorni++;
-        int _giorniMese = CorrectDate.giorniMese(CorrectDate.mese(data), CorrectDate.bisestile(CorrectDate.anno(data)));
+        int _giorniMese = Data.giorniMese(Data.mese(data), Data.bisestile(Data.anno(data)));
         boolean _greaterThan = (giorni > _giorniMese);
         if (_greaterThan) {
           giorni = 1;
@@ -99,20 +82,20 @@ public class CorrectDate {
         i++;
       }
     }
-    return CorrectDate.data(anno, mese, giorni);
+    return Data.data(anno, mese, giorni);
   }
   
   public static int sottraiGiorni(int data, int n) {
-    int giorni = CorrectDate.giorno(data);
-    int mese = CorrectDate.mese(data);
-    int anno = CorrectDate.anno(data);
+    int giorni = Data.giorno(data);
+    int mese = Data.mese(data);
+    int anno = Data.anno(data);
     int i = 0;
     while ((i != n)) {
       {
         giorni--;
         if ((giorni < 0)) {
           mese--;
-          giorni = CorrectDate.giorniMese(mese, CorrectDate.bisestile(anno));
+          giorni = Data.giorniMese(mese, Data.bisestile(anno));
         }
         if ((mese < 1)) {
           mese = 12;
@@ -121,16 +104,35 @@ public class CorrectDate {
         i++;
       }
     }
-    return CorrectDate.data(anno, mese, giorni);
+    return Data.data(anno, mese, giorni);
+  }
+  
+  public static int dataMaggiore(int d1, int d2) {
+    int _anno = Data.anno(d1);
+    int _anno_1 = Data.anno(d2);
+    boolean _greaterThan = (_anno > _anno_1);
+    if (_greaterThan) {
+      return d1;
+    } else {
+      if (((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) > Data.mese(d2)))) {
+        return d1;
+      } else {
+        if ((((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) == Data.mese(d2))) && (Data.giorno(d1) > Data.giorno(d2)))) {
+          return d1;
+        } else {
+          return d2;
+        }
+      }
+    }
   }
   
   public static int differenzaGiorni(int d1, int d2) {
     int i = 0;
-    int data = CorrectDate.dataMaggiore(d1, d2);
-    int giorno = CorrectDate.giorno(data);
-    int mese = CorrectDate.mese(data);
-    int anno = CorrectDate.anno(data);
-    int _data = CorrectDate.data(anno, mese, giorno);
+    int data = Data.dataMaggiore(d1, d2);
+    int giorno = Data.giorno(data);
+    int mese = Data.mese(data);
+    int anno = Data.anno(data);
+    int _data = Data.data(anno, mese, giorno);
     int _xjconditionalexpression = (int) 0;
     if ((data == d1)) {
       _xjconditionalexpression = d2;
@@ -143,7 +145,7 @@ public class CorrectDate {
       {
         giorno--;
         if ((giorno < 0)) {
-          giorno = CorrectDate.giorniMese(data, CorrectDate.bisestile(anno));
+          giorno = Data.giorniMese(data, Data.bisestile(anno));
           mese--;
         }
         if ((mese < 0)) {
@@ -152,7 +154,7 @@ public class CorrectDate {
         }
         i++;
       }
-      int _data_1 = CorrectDate.data(anno, mese, giorno);
+      int _data_1 = Data.data(anno, mese, giorno);
       int _xjconditionalexpression_1 = (int) 0;
       if ((data == d1)) {
         _xjconditionalexpression_1 = d2;
@@ -166,7 +168,7 @@ public class CorrectDate {
   }
   
   public static void main(String[] args) {
-    System.out.println(CorrectDate.differenzaGiorni(20211101, 20211022));
-    System.out.println(CorrectDate.differenzaGiorni(20211022, 20211101));
+    System.out.println(Data.differenzaGiorni(20211101, 20211022));
+    System.out.println(Data.differenzaGiorni(20211022, 20211101));
   }
 }
