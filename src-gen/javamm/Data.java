@@ -198,19 +198,23 @@ public class Data {
   }
   
   public static int dataMaggiore(int d1, int d2) {
-    int _anno = Data.anno(d1);
-    int _anno_1 = Data.anno(d2);
-    boolean _greaterThan = (_anno > _anno_1);
-    if (_greaterThan) {
-      return d1;
+    if ((d1 == d2)) {
+      return 0;
     } else {
-      if (((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) > Data.mese(d2)))) {
+      int _anno = Data.anno(d1);
+      int _anno_1 = Data.anno(d2);
+      boolean _greaterThan = (_anno > _anno_1);
+      if (_greaterThan) {
         return d1;
       } else {
-        if ((((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) == Data.mese(d2))) && (Data.giorno(d1) > Data.giorno(d2)))) {
+        if (((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) > Data.mese(d2)))) {
           return d1;
         } else {
-          return d2;
+          if ((((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) == Data.mese(d2))) && (Data.giorno(d1) > Data.giorno(d2)))) {
+            return d1;
+          } else {
+            return d2;
+          }
         }
       }
     }

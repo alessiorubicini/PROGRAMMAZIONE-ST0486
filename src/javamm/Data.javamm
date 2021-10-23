@@ -111,7 +111,6 @@ int sommaSottraiGiorni(int data, int n) {
 	int mese = mese(data);
 	int anno = anno(data);
 	int i = 0;
-	
 	while(negativo(n) ? (i != -n) : (i != n)) {
 		negativo(n) ? giorni-- : giorni ++;
 		if(negativo(n) ? giorni < 1 : giorni > giorniMese(mese(data), bisestile(anno(data)))) {
@@ -123,14 +122,15 @@ int sommaSottraiGiorni(int data, int n) {
 			negativo(n) ? anno-- : anno++;
 		}
 		i++;
-	} 
-	
+	}
 	return data(anno, mese, giorni);
 }
 
-// Restituisce la data temporalmente maggiore tra le due
+// Restituisce la data temporalmente maggiore tra le due, 0 se sono uguali
 int dataMaggiore(int d1, int d2) {
-	if(anno(d1) > anno(d2)) {
+	if(d1 == d2) {
+		return 0;
+	} else if (anno(d1) > anno(d2)) {
 		return d1;
 	} else if (anno(d1) == anno(d2) && mese(d1) > mese(d2)) {
 		return d1;
