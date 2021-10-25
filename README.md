@@ -19,3 +19,4 @@ Tutti i file delle esercitazioni sono contenuti nella cartella [src/javamm](src/
 | Radice quadrata alg. Babilonese 	| 19/10/2021                | [RadiceQuadrata.javamm](src/javamm/RadiceQuadrata.javamm) |
 | Crivello di Eratostene    		| 22/10/2021                | [Eratostene.javamm](src/javamm/Eratostene.javamm) |
 | Generazione seq. DNA      		| 22/10/2021                | [DNA.javamm](src/javamm/DNA.javamm) |
+| Array						 		| 25/10/2021                | [Array.javamm](src/javamm/Array.javamm) |
