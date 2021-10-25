@@ -5,7 +5,10 @@ public class Data {
   /**
    * Manipolazione di date in formato numerico
    * 14/10/2021
-   * Esercizio iniziato da Michele Loreti e continuato da Alessio Rubicini
+   * ST0486 Programmazione 2021/22
+   * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+   * 
+   * Fare riferimento al documento 'Esercizi Programmazione' caricato dal Prof. Loreti su Google drive
    */
   public static int anno(int d) {
     return (d / 10000);
@@ -57,6 +60,9 @@ public class Data {
     return true;
   }
   
+  /**
+   * --------------------------------------------------------------------------------
+   */
   public static int data(int anno, int mese, int giorno) {
     return (((anno * 10000) + (mese * 100)) + giorno);
   }
@@ -69,52 +75,6 @@ public class Data {
       _xjconditionalexpression = false;
     }
     return _xjconditionalexpression;
-  }
-  
-  public static int sommaGiorni(int d, int n) {
-    int giorni = Data.giorno(d);
-    int mese = Data.mese(d);
-    int anno = Data.anno(d);
-    int i = 0;
-    while ((i != n)) {
-      {
-        giorni++;
-        int _giorniMese = Data.giorniMese(Data.mese(d), Data.bisestile(Data.anno(d)));
-        boolean _greaterThan = (giorni > _giorniMese);
-        if (_greaterThan) {
-          giorni = 1;
-          mese++;
-        }
-        if ((mese > 12)) {
-          mese = 1;
-          anno++;
-        }
-        i++;
-      }
-    }
-    return Data.data(anno, mese, giorni);
-  }
-  
-  public static int sottraiGiorni(int data, int n) {
-    int giorni = Data.giorno(data);
-    int mese = Data.mese(data);
-    int anno = Data.anno(data);
-    int i = 0;
-    while ((i != n)) {
-      {
-        giorni--;
-        if ((giorni < 0)) {
-          mese--;
-          giorni = Data.giorniMese(mese, Data.bisestile(anno));
-        }
-        if ((mese < 1)) {
-          mese = 12;
-          anno--;
-        }
-        i++;
-      }
-    }
-    return Data.data(anno, mese, giorni);
   }
   
   public static int sommaSottraiGiorni(int data, int n) {
@@ -211,6 +171,9 @@ public class Data {
   
   public static int differenzaInGiorni(int d1, int d2) {
     int data = Data.dataMaggiore(d1, d2);
+    if ((data == 0)) {
+      return 0;
+    }
     int dataSottratta = data;
     int i = 0;
     int _xjconditionalexpression = (int) 0;
@@ -242,5 +205,8 @@ public class Data {
     int _differenzaInGiorni = Data.differenzaInGiorni(20211025, 20211102);
     String _plus = ("Giorni di differenza tra il 25/10/2021 e il 02/11/2021 = " + Integer.valueOf(_differenzaInGiorni));
     System.out.println(_plus);
+    int _differenzaInGiorni_1 = Data.differenzaInGiorni(20211025, 20211025);
+    String _plus_1 = ("Giorni di differenza tra il 25/10/2021 e il 25/10/2021 = " + Integer.valueOf(_differenzaInGiorni_1));
+    System.out.println(_plus_1);
   }
 }

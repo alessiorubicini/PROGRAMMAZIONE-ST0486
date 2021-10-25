@@ -1,7 +1,10 @@
 /**
  * Manipolazione di date in formato numerico
  * 14/10/2021
- * Esercizio iniziato da Michele Loreti e continuato da Alessio Rubicini
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+ * 
+ * Fare riferimento al documento 'Esercizi Programmazione' caricato dal Prof. Loreti su Google drive
  */
 int anno(int d) {
 	return d/10000;
@@ -53,6 +56,7 @@ boolean corretta(int d) {
 	return true;
 }
 
+/* -------------------------------------------------------------------------------- */
 
 // A partire da anno mese e giorno separati, restituisce la data completa in formato numerico
 int data(int anno, int mese, int giorno) {
@@ -62,50 +66,9 @@ int data(int anno, int mese, int giorno) {
 // Ritorna true se il valore è negativo, false altrimenti
 boolean negativo(int n) { return (n < 0) ? true : false; }
 
-// Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d+n giorni.
-int sommaGiorni(int d, int n) {
-	int giorni = giorno(d);
-	int mese = mese(d);
-	int anno = anno(d);
-	int i = 0;
-	
-	while(i != n) {
-		giorni ++;
-		if(giorni > giorniMese(mese(d), bisestile(anno(d)))) {
-			giorni = 1;
-			mese++;
-		}
-		if(mese > 12) {
-			mese = 1;
-			anno++;
-		}
-		i++;
-	} 	
-	
-	return data(anno, mese, giorni);
-}
-
-// Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d-n giorni.
-int sottraiGiorni(int data, int n) {
-	int giorni = giorno(data);
-	int mese = mese(data);
-	int anno = anno(data);
-	int i = 0;
-	while(i != n) {
-		giorni --;
-		if(giorni < 0) {
-			mese--;
-			giorni = giorniMese(mese, bisestile(anno));
-		}
-		if(mese < 1) {
-			mese = 12;
-			anno--;
-		}
-		i++;
-	}	
-	return data(anno, mese, giorni);
-}
-
+// 1. Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d+n giorni.
+// 2. Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d-n giorni.
+// =
 // Data una data in formato numerico somma o sottrae n giorni, a seconda del segno di n stesso
 int sommaSottraiGiorni(int data, int n) {
 	int giorni = giorno(data);
@@ -138,9 +101,10 @@ int dataMaggiore(int d1, int d2) {
 	}
 }
 
-// Date due date d1 e d2 in formato numerico, determinare la differenza in giorni
+// 3. Date due date d1 e d2 in formato numerico, determinare la differenza in giorni
 int differenzaInGiorni(int d1, int d2) {
 	int data = dataMaggiore(d1, d2);
+	if (data == 0) return 0;
 	int dataSottratta = data;
 	int i = 0;
 	while(dataSottratta != (data == d1 ? d2 : d1)) {
@@ -151,3 +115,4 @@ int differenzaInGiorni(int d1, int d2) {
 }
 
 System.out.println("Giorni di differenza tra il 25/10/2021 e il 02/11/2021 = " + differenzaInGiorni(20211025, 20211102));
+System.out.println("Giorni di differenza tra il 25/10/2021 e il 25/10/2021 = " + differenzaInGiorni(20211025, 20211025));
