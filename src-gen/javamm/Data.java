@@ -71,15 +71,15 @@ public class Data {
     return _xjconditionalexpression;
   }
   
-  public static int sommaGiorni(int data, int n) {
-    int giorni = Data.giorno(data);
-    int mese = Data.mese(data);
-    int anno = Data.anno(data);
+  public static int sommaGiorni(int d, int n) {
+    int giorni = Data.giorno(d);
+    int mese = Data.mese(d);
+    int anno = Data.anno(d);
     int i = 0;
     while ((i != n)) {
       {
         giorni++;
-        int _giorniMese = Data.giorniMese(Data.mese(data), Data.bisestile(Data.anno(data)));
+        int _giorniMese = Data.giorniMese(Data.mese(d), Data.bisestile(Data.anno(d)));
         boolean _greaterThan = (giorni > _giorniMese);
         if (_greaterThan) {
           giorni = 1;
@@ -142,7 +142,7 @@ public class Data {
         boolean _xjconditionalexpression_1 = false;
         boolean _negativo_2 = Data.negativo(n);
         if (_negativo_2) {
-          _xjconditionalexpression_1 = (giorni < 1);
+          _xjconditionalexpression_1 = (giorni <= 0);
         } else {
           int _giorniMese = Data.giorniMese(Data.mese(data), Data.bisestile(Data.anno(data)));
           _xjconditionalexpression_1 = (giorni > _giorniMese);
@@ -150,15 +150,15 @@ public class Data {
         if (_xjconditionalexpression_1) {
           boolean _negativo_3 = Data.negativo(n);
           if (_negativo_3) {
-            giorni = Data.giorniMese(Data.mese(data), Data.bisestile(Data.anno(data)));
-          } else {
-            giorni = 1;
-          }
-          boolean _negativo_4 = Data.negativo(n);
-          if (_negativo_4) {
             mese--;
           } else {
             mese++;
+          }
+          boolean _negativo_4 = Data.negativo(n);
+          if (_negativo_4) {
+            giorni = Data.giorniMese(mese, Data.bisestile(anno));
+          } else {
+            giorni = 1;
           }
         }
         boolean _xjconditionalexpression_2 = false;
@@ -201,68 +201,46 @@ public class Data {
     if ((d1 == d2)) {
       return 0;
     } else {
-      int _anno = Data.anno(d1);
-      int _anno_1 = Data.anno(d2);
-      boolean _greaterThan = (_anno > _anno_1);
-      if (_greaterThan) {
+      if ((((Data.anno(d1) > Data.anno(d2)) || ((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) > Data.mese(d2)))) || (((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) == Data.mese(d2))) && (Data.giorno(d1) > Data.giorno(d2))))) {
         return d1;
       } else {
-        if (((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) > Data.mese(d2)))) {
-          return d1;
-        } else {
-          if ((((Data.anno(d1) == Data.anno(d2)) && (Data.mese(d1) == Data.mese(d2))) && (Data.giorno(d1) > Data.giorno(d2)))) {
-            return d1;
-          } else {
-            return d2;
-          }
-        }
+        return d2;
       }
     }
   }
   
-  public static int differenzaGiorni(int d1, int d2) {
-    int i = 0;
+  public static int differenzaInGiorni(int d1, int d2) {
     int data = Data.dataMaggiore(d1, d2);
-    int giorno = Data.giorno(data);
-    int mese = Data.mese(data);
-    int anno = Data.anno(data);
-    int _data = Data.data(anno, mese, giorno);
+    int dataSottratta = data;
+    int i = 0;
     int _xjconditionalexpression = (int) 0;
     if ((data == d1)) {
       _xjconditionalexpression = d2;
     } else {
       _xjconditionalexpression = d1;
     }
-    boolean _tripleNotEquals = (_data != _xjconditionalexpression);
+    boolean _tripleNotEquals = (dataSottratta != _xjconditionalexpression);
     boolean _while = _tripleNotEquals;
     while (_while) {
       {
-        giorno--;
-        if ((giorno < 0)) {
-          giorno = Data.giorniMese(data, Data.bisestile(anno));
-          mese--;
-        }
-        if ((mese < 0)) {
-          mese = 12;
-          anno--;
-        }
+        dataSottratta = Data.sommaSottraiGiorni(dataSottratta, -1);
         i++;
       }
-      int _data_1 = Data.data(anno, mese, giorno);
       int _xjconditionalexpression_1 = (int) 0;
       if ((data == d1)) {
         _xjconditionalexpression_1 = d2;
       } else {
         _xjconditionalexpression_1 = d1;
       }
-      boolean _tripleNotEquals_1 = (_data_1 != _xjconditionalexpression_1);
+      boolean _tripleNotEquals_1 = (dataSottratta != _xjconditionalexpression_1);
       _while = _tripleNotEquals_1;
     }
     return i;
   }
   
   public static void main(String[] args) {
-    System.out.println(Data.sommaSottraiGiorni(20211023, 2));
-    System.out.println(Data.sommaSottraiGiorni(20211023, -2));
+    int _differenzaInGiorni = Data.differenzaInGiorni(20211025, 20211102);
+    String _plus = ("Giorni di differenza tra il 25/10/2021 e il 02/11/2021 = " + Integer.valueOf(_differenzaInGiorni));
+    System.out.println(_plus);
   }
 }
