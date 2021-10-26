@@ -63,9 +63,6 @@ int data(int anno, int mese, int giorno) {
 	return (anno * 10000) + (mese * 100) + (giorno);
 }
 
-// Ritorna true se il valore è negativo, false altrimenti
-boolean negativo(int n) { return (n < 0) ? true : false; }
-
 // 1. Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d+n giorni.
 // 2. Data una data d in formato numerico e un numero n positivo, calcolare la data corrispondente a d-n giorni.
 // =
@@ -75,15 +72,15 @@ int sommaSottraiGiorni(int data, int n) {
 	int mese = mese(data);
 	int anno = anno(data);
 	int i = 0;
-	while(negativo(n) ? (i != -n) : (i != n)) {
-		negativo(n) ? giorni-- : giorni ++;
-		if(negativo(n) ? giorni <= 0 : giorni > giorniMese(mese(data), bisestile(anno(data)))) {
-			negativo(n) ? mese-- : mese++;
-			negativo(n) ? giorni = giorniMese(mese, bisestile(anno)) : giorni = 1;
+	while(n < 0 ? (i != -n) : (i != n)) {
+		n < 0 ? giorni-- : giorni ++;
+		if(n < 0 ? giorni <= 0 : giorni > giorniMese(mese(data), bisestile(anno(data)))) {
+			n < 0 ? mese-- : mese++;
+			n < 0 ? giorni = giorniMese(mese, bisestile(anno)) : giorni = 1;
 		}
-		if(negativo(n) ? mese < 0 : mese > 12) {
-			negativo(n) ? mese = 12 : mese = 1;
-			negativo(n) ? anno-- : anno++;
+		if(n < 0 ? mese < 0 : mese > 12) {
+			n < 0 ? mese = 12 : mese = 1;
+			n < 0 ? anno-- : anno++;
 		}
 		i++;
 	}

@@ -67,24 +67,13 @@ public class Data {
     return (((anno * 10000) + (mese * 100)) + giorno);
   }
   
-  public static boolean negativo(int n) {
-    boolean _xjconditionalexpression = false;
-    if ((n < 0)) {
-      _xjconditionalexpression = true;
-    } else {
-      _xjconditionalexpression = false;
-    }
-    return _xjconditionalexpression;
-  }
-  
   public static int sommaSottraiGiorni(int data, int n) {
     int giorni = Data.giorno(data);
     int mese = Data.mese(data);
     int anno = Data.anno(data);
     int i = 0;
     boolean _xjconditionalexpression = false;
-    boolean _negativo = Data.negativo(n);
-    if (_negativo) {
+    if ((n < 0)) {
       int _minus = (-n);
       _xjconditionalexpression = (i != _minus);
     } else {
@@ -93,50 +82,43 @@ public class Data {
     boolean _while = _xjconditionalexpression;
     while (_while) {
       {
-        boolean _negativo_1 = Data.negativo(n);
-        if (_negativo_1) {
+        if ((n < 0)) {
           giorni--;
         } else {
           giorni++;
         }
         boolean _xjconditionalexpression_1 = false;
-        boolean _negativo_2 = Data.negativo(n);
-        if (_negativo_2) {
+        if ((n < 0)) {
           _xjconditionalexpression_1 = (giorni <= 0);
         } else {
           int _giorniMese = Data.giorniMese(Data.mese(data), Data.bisestile(Data.anno(data)));
           _xjconditionalexpression_1 = (giorni > _giorniMese);
         }
         if (_xjconditionalexpression_1) {
-          boolean _negativo_3 = Data.negativo(n);
-          if (_negativo_3) {
+          if ((n < 0)) {
             mese--;
           } else {
             mese++;
           }
-          boolean _negativo_4 = Data.negativo(n);
-          if (_negativo_4) {
+          if ((n < 0)) {
             giorni = Data.giorniMese(mese, Data.bisestile(anno));
           } else {
             giorni = 1;
           }
         }
         boolean _xjconditionalexpression_2 = false;
-        boolean _negativo_5 = Data.negativo(n);
-        if (_negativo_5) {
+        if ((n < 0)) {
           _xjconditionalexpression_2 = (mese < 0);
         } else {
           _xjconditionalexpression_2 = (mese > 12);
         }
         if (_xjconditionalexpression_2) {
-          boolean _negativo_6 = Data.negativo(n);
-          if (_negativo_6) {
+          if ((n < 0)) {
             mese = 12;
           } else {
             mese = 1;
           }
-          boolean _negativo_7 = Data.negativo(n);
-          if (_negativo_7) {
+          if ((n < 0)) {
             anno--;
           } else {
             anno++;
@@ -145,8 +127,7 @@ public class Data {
         i++;
       }
       boolean _xjconditionalexpression_1 = false;
-      boolean _negativo_1 = Data.negativo(n);
-      if (_negativo_1) {
+      if ((n < 0)) {
         int _minus_1 = (-n);
         _xjconditionalexpression_1 = (i != _minus_1);
       } else {
