@@ -1,14 +1,16 @@
 # Programmazione ST0486 2021/22
-## Università degli Studi di Camerino
+## [Università degli Studi di Camerino](https://www.unicam.it)
 
-Questa repository contiene le esercitazioni svolte nel corso Programmazione ST0486 dei corsi di Informatica e Informatica
+Questa repository contiene le esercitazioni svolte nel corso Programmazione ST0486 dei corsi di laurea triennale in Informatica e Informatica
 per la comunicazione digitale dell'anno 2021/22 ed è mantenuta dallo studente Alessio Rubicini.
 
-**La presente NON È una repository ufficiale dei docenti e non è in alcun modo affiliata all'Ateneo.**
+Si invitano gli utenti a tenere presente che:
+- **la presente NON È una repository ufficiale dei docenti e non è in alcun modo affiliata all'Ateneo**;
+- la repository contiene **anche* codice scritto dall'autore della repository stessa e quindi non sviluppato in aula con i docenti;
+- il codice caricato su questa repository può non essere sempre corretto e funzionante.
 
 Le esercitazioni iniziali sono realizzate tramite il linguaggio [Java--](http://www.pilucrescenzi.it/goccedijava/).
 
-Tutti i file delle esercitazioni sono contenuti nella cartella [src/javamm](src/javamm).
 
 ## Esercizi
 | Nome                              | Data                      | File                                                      |
