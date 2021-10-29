@@ -15,7 +15,6 @@ Le esercitazioni iniziali sono realizzate tramite il linguaggio [Java--](http://
 ## Esercitazioni
 | Nome                              		| Data lezione		| File                                                      |
 | ----------------------------------------- | ----------------- | --------------------------------------------------------- |
-| Triangolo di Tartaglia					| 29/10/2021        | [TriangoloTartaglia.javamm](src/javamm/TriangoloTartaglia.javamm) |
 | Pattern matching Naive				    | 29/10/2021        | [PatternMatchingNaive.javamm](src/javamm/PatternMatchingNaive.javamm) |
 | Array						 				| 25/10/2021        | [Array.javamm](src/javamm/Array.javamm) |
 | Generazione sequenza DNA 					| 22/10/2021        | [DNA.javamm](src/javamm/DNA.javamm) |
