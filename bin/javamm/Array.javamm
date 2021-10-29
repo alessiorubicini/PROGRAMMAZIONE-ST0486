@@ -1,5 +1,9 @@
-// Università di Camerino - Programmazione ST0486 2021/22 
-// Lezione 25 ottobre 2021
+/**
+ * Manipolazione di array
+ * Lezione 25/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
  
 char[] creaArray(int n) {
 	char[] r = new char[n];

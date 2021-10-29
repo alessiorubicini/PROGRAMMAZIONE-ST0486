@@ -1,6 +1,9 @@
-// Università di Camerino - Programmazione ST0486 2021/22 
-// Lezione 19 ottobre 2021
-// Radice quadrata con algoritmo babilonese
+/**
+ * Radice quadrata con algoritmo babilonese
+ * Lezione 19/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
 
 double sqrt(double x, double a, double b, double epsilon) {
 	int i = 0;

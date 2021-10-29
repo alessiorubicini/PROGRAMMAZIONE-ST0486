@@ -1,6 +1,9 @@
-// Università di Camerino - Programmazione ST0486 2021/22 
-// Lezione 22 ottobre 2021
-// Numer primi: tecnica del crivello di Eratostene
+/**
+ * Numeri primi: tecnica del crivello di Eratostene
+ * Lezione 22/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
 
 boolean[] eratostene(boolean[] vettore) {
 	

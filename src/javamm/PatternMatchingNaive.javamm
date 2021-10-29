@@ -1,0 +1,28 @@
+/**
+ * Ricerca di un pattern in un testo
+ * Lezione 29/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
+
+// Per ogni carattere nel vettore testo il metodo controlla se quel carattere e i suoi successivi corrispondono al pattern da cercare
+int naive(char[] pattern, char[] testo) {
+	// Itera sul vettore testo
+	for(int i = 0; i <= testo.length - pattern.length; i++) {
+		int j = 0;
+		
+		// Per ogni carattere nel pattern, controlla la corrispondenza con il testo
+		// Il ciclo (while) continua finché:
+		// - il pattern non è stato analizzato completamente
+		// - il carattere del pattern trova corrispondenza nel testo (se non c'è corrispondenza è inutile continuare con i caratteri successivi)
+		while((j < pattern.length) && (testo[i + j] == pattern[j])) j++;
+		
+		// Se ha terminato di analizzare il pattern ritorna la posizione dell'occorrenza nel testo
+		if(j == pattern.length) return i;
+	}
+	return 0;
+}
+
+char[] testo = "Nel mezzo del cammin di nostra vita".toCharArray();
+char[] pattern = "cammin".toCharArray();
+System.out.println("Pattern trovato alla posizione " + naive(pattern, testo));

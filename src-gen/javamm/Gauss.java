@@ -3,10 +3,10 @@ package javamm;
 @SuppressWarnings("all")
 public class Gauss {
   /**
-   * Prende la rappresentazione di 1 e sposta i bit in blocco di 2 posizioni
-   * Spostando a sinistra di 1 bit è come se moltiplicassi per 2
-   * Spostando a destra di 1 bit è come se dividessi per 2
-   * Rappresentazione posizionale: un simbolo a seconda di dove si trova ha un valore diverso
+   * Formula di Gauss
+   * Lezione 15/10/2021
+   * ST0486 Programmazione 2021/22
+   * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
    */
   public static int gauss1(int n) {
     return ((n * (n + 1)) / 2);

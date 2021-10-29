@@ -2,6 +2,12 @@ package javamm;
 
 @SuppressWarnings("all")
 public class RadiceQuadrata {
+  /**
+   * Radice quadrata con algoritmo babilonese
+   * Lezione 19/10/2021
+   * ST0486 Programmazione 2021/22
+   * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+   */
   public static double sqrt(double x, double a, double b, double epsilon) {
     int i = 0;
     while (((b - a) > epsilon)) {

@@ -4,6 +4,12 @@ import javamm.util.Input;
 
 @SuppressWarnings("all")
 public class Eratostene {
+  /**
+   * Numeri primi: tecnica del crivello di Eratostene
+   * Lezione 22/10/2021
+   * ST0486 Programmazione 2021/22
+   * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+   */
   public static boolean[] eratostene(boolean[] vettore) {
     for (int i = 2; (i < vettore.length); i++) {
       boolean _tripleEquals = (Boolean.valueOf(vettore[i]) == Boolean.valueOf(true));

@@ -1,6 +1,9 @@
-// Università di Camerino - Programmazione ST0486 2021/22 
-// Lezione 19 ottobre 2021
-// Media progressiva
+/**
+ * Media progressiva
+ * Lezione 19/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
 
 int i = 0;			// Nuovo numero in input
 int n = 0;			// Contatore di numeri inseriti

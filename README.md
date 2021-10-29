@@ -1,4 +1,4 @@
-# Programmazione ST0486 2021/22
+# ST0486 Programmazione 2021/22
 ## [Università degli Studi di Camerino](https://www.unicam.it)
 
 Questa repository contiene le esercitazioni svolte nel corso Programmazione ST0486 dei corsi di laurea triennale in Informatica e Informatica
@@ -13,13 +13,14 @@ Le esercitazioni iniziali sono realizzate tramite il linguaggio [Java--](http://
 
 
 ## Esercitazioni
-| Nome                              | Data lezione              | File                                                      |
-| --------------------------------- | ------------------------- | --------------------------------------------------------- |
-| Array						 		| 25/10/2021                | [Array.javamm](src/javamm/Array.javamm) |
-| Generazione seq. DNA      		| 22/10/2021                | [DNA.javamm](src/javamm/DNA.javamm) |
-| Crivello di Eratostene    		| 22/10/2021                | [Eratostene.javamm](src/javamm/Eratostene.javamm) |
-| Radice quadrata alg. Babilonese 	| 19/10/2021                | [RadiceQuadrata.javamm](src/javamm/RadiceQuadrata.javamm) |
-| Media progressiva   				| 19/10/2021                | [MediaProgressiva.javamm](src/javamm/MediaProgressiva.javamm) |
-| Formula di Gauss   				| 15/10/2021                | [Gauss.javamm](src/javamm/Gauss.javamm)|
-| Manipolazione data   				| 14/10/2021                | [Data.javamm](src/javamm/Data.javamm)|						
-						
+| Nome                              		| Data lezione		| File                                                      |
+| ----------------------------------------- | ----------------- | --------------------------------------------------------- |
+| Triangolo di Tartaglia					| 29/10/2021        | [TriangoloTartaglia.javamm](src/javamm/TriangoloTartaglia.javamm) |
+| Pattern matching Naive				    | 29/10/2021        | [PatternMatchingNaive.javamm](src/javamm/PatternMatchingNaive.javamm) |
+| Array						 				| 25/10/2021        | [Array.javamm](src/javamm/Array.javamm) |
+| Generazione sequenza DNA 					| 22/10/2021        | [DNA.javamm](src/javamm/DNA.javamm) |
+| Crivello di Eratostene    				| 22/10/2021        | [Eratostene.javamm](src/javamm/Eratostene.javamm) |
+| Radice quadrata con algoritmo Babilonese 	| 19/10/2021        | [RadiceQuadrata.javamm](src/javamm/RadiceQuadrata.javamm) |
+| Media progressiva   						| 19/10/2021        | [MediaProgressiva.javamm](src/javamm/MediaProgressiva.javamm) |
+| Formula di Gauss   						| 15/10/2021        | [Gauss.javamm](src/javamm/Gauss.javamm)|
+| Manipolazione data   						| 14/10/2021        | [Data.javamm](src/javamm/Data.javamm)|

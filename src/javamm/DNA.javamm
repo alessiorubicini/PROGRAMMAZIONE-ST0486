@@ -1,11 +1,15 @@
-// Università di Camerino - Programmazione ST0486 2021/22 
-// Lezione 22 ottobre 2021
+/**
+ * Generazione sequenza DNA
+ * Lezione 22/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
+
 /*
  * Realizzare il metodo creaDNA che produca una catena
  * DNA con valori casuali di 'A', 'T', 'C', 'G'.
  * Il parametro intero n definisce la lunghezza della catena.
- */
- 
+ */ 
 char[] creaDNA(int n) {
 	
 	// Dichiarazione e inizializzazione array di n elementi

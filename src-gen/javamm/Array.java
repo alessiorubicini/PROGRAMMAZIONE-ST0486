@@ -2,6 +2,12 @@ package javamm;
 
 @SuppressWarnings("all")
 public class Array {
+  /**
+   * Manipolazione di array
+   * Lezione 25/10/2021
+   * ST0486 Programmazione 2021/22
+   * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+   */
   public static char[] creaArray(int n) {
     char[] r = new char[n];
     for (int i = 0; (i < n); i++) {
