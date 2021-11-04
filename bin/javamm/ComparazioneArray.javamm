@@ -1,0 +1,41 @@
+/**
+ * Comparazione di array
+ * 28/10/2021 - 04/11/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+ */
+
+// Restituisce il numero di occorrenze dell'elemento v nell'array a
+int occorrenze(int v, int[] a) {
+	int contatore = 0;
+	for(int i = 0; i < a.length; i++) {
+		if(a[i] == v) contatore++;
+	}
+	return contatore;
+}
+
+boolean sottoinsiemeElementi(int[] a1, int[] a2) {
+	for(int i = 0; i < a1.length; i++) {
+		if(occorrenze(a1[i], a2) == 0) {
+			return false;
+		}
+	}
+	return true;
+}
+
+// Restituisce true se a1 e a2 hanno lo stesso insieme di elementi
+boolean stessoInsiemeElementi(int[] a1, int[] a2) {
+	return (sottoinsiemeElementi(a1, a2) && sottoinsiemeElementi(a2, a1));
+}
+
+// Restituisce true se a1 e a2 contengono gli stessi elementi con le stesse occorrenze
+boolean stesseOccorrenzeElementi(int[] a1, int[] a2) {
+	if(a1.length != a2.length) return false;
+	for(int i = 0; i < a1.length; i++) {
+		if(occorrenze(a1[i], a1) != occorrenze(a1[i], a2)) {
+			return false;
+		}
+	}
+	return true;
+}
+

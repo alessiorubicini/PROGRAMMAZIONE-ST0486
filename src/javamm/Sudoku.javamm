@@ -1,0 +1,61 @@
+/**
+ * Sudoku con matrici (si assume che la matrice è 9x9)
+ * 04/11/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+ */
+ 
+int occorrenze(int v, int[] a) {
+	int contatore = 0;
+	for(int i = 0; i < a.length; i++) {
+		if(a[i] == v) contatore++;
+	}
+	return contatore;
+}
+
+/*
+ * Restituisce true se il numero 'v' non occorre:
+ * - sulla riga r;
+ * - sulla colonna c;
+ * - nel quadrato contenente (r, c);
+ */
+boolean isValid(int[][] schema, int r, int c, int v) {
+	return !(occorreNellaRiga(schema, r, v) || occorreNellaColonna(schema, c, v) 
+		|| occorreNelQuadrato(schema, r, c, v)
+	);
+}
+
+// Restituisce true se il numero v occorre nella riga r
+boolean occorreNellaRiga(int[][] schema, int r, int v) {
+	for(int i = 0; i < 9; i++) {
+		if(schema[r][i] == v) {
+			return true;
+		}
+	}
+	return false;
+}
+
+// Restituisce true se il numero v occorre nella colonna c
+boolean occorreNellaColonna(int[][] schema, int c, int v) {
+	for(int i = 0; i < 9; i++) {
+		if(schema[i][c] == v) {
+			return true;
+		}
+	}
+	return false;
+}
+
+// Restituisce true se il numero v occorre nel quadrato c contenente (r,c)
+boolean occorreNelQuadrato(int[][] schema, int r, int c, int v) {
+	int rigaQuadrato = r/3;
+	int colonnaQuadrato = c/3;
+	for(int i = 0; i < 3; i++) {
+		for(int j = 0; j < 3; j++) {
+			// Se l'elemento (i,j) nel sottoquadrato (rigaQuadrato, colonnaQuadrato) è uguale a v ritorna true
+			if(schema[rigaQuadrato * 3 + i][colonnaQuadrato * 3 + j] == v) {
+				return true;				
+			}
+		}
+	}
+	return false;
+}

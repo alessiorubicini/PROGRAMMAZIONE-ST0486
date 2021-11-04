@@ -13,14 +13,16 @@ Le esercitazioni iniziali sono realizzate tramite il linguaggio [Java--](http://
 
 
 ## Esercitazioni
-| Nome                              			| Data lezione		| File                                                      |
-| ----------------------------------------- | ----------------- | --------------------------------------------------------- |
-| Triangolo di Tartaglia						| 02/11/2021        | [TriangoloDiTartaglia.javamm](src/javamm/TriangoloDiTartaglia.javamm) |
-| Pattern matching Naive				    		| 29/10/2021        | [PatternMatchingNaive.javamm](src/javamm/PatternMatchingNaive.javamm) |
-| Array						 				| 25/10/2021        | [Array.javamm](src/javamm/Array.javamm) |
-| Generazione sequenza DNA 					| 22/10/2021        | [DNA.javamm](src/javamm/DNA.javamm) |
-| Crivello di Eratostene    					| 22/10/2021        | [Eratostene.javamm](src/javamm/Eratostene.javamm) |
-| Radice quadrata con algoritmo Babilonese 	| 19/10/2021        | [RadiceQuadrata.javamm](src/javamm/RadiceQuadrata.javamm) |
-| Media progressiva   						| 19/10/2021        | [MediaProgressiva.javamm](src/javamm/MediaProgressiva.javamm) |
-| Formula di Gauss   						| 15/10/2021        | [Gauss.javamm](src/javamm/Gauss.javamm)|
-| Manipolazione data   						| 14/10/2021        | [Data.javamm](src/javamm/Data.javamm)|
+| Nome                              			| Data lezione		| File                                                      			| Note aggiuntive		  |
+| ----------------------------------------- | ----------------- | --------------------------------------------------------------------- | ----------------------- |
+| Sudoku					 				| 04/11/2021        | [Sudoku.javamm](src/javamm/Sudoku.javamm)								| 						  |
+| Comparazione Array			 			| 04/11/2021        | [ComparazioneArray.javamm](src/javamm/ComparazioneArray.javamm)		| Esercizio per casa	  |
+| Triangolo di Tartaglia						| 02/11/2021        | [TriangoloDiTartaglia.javamm](src/javamm/TriangoloDiTartaglia.javamm) |						  |
+| Pattern matching Naive				    		| 29/10/2021        | [PatternMatchingNaive.javamm](src/javamm/PatternMatchingNaive.javamm) |						  |
+| Array						 				| 25/10/2021        | [Array.javamm](src/javamm/Array.javamm) 								|						  |
+| Generazione sequenza DNA 					| 22/10/2021        | [DNA.javamm](src/javamm/DNA.javamm) 									|						  |
+| Crivello di Eratostene    					| 22/10/2021        | [Eratostene.javamm](src/javamm/Eratostene.javamm) 					|						  |
+| Radice quadrata con algoritmo Babilonese 	| 19/10/2021        | [RadiceQuadrata.javamm](src/javamm/RadiceQuadrata.javamm) 			|						  |
+| Media progressiva   						| 19/10/2021        | [MediaProgressiva.javamm](src/javamm/MediaProgressiva.javamm)			|						  |
+| Formula di Gauss   						| 15/10/2021        | [Gauss.javamm](src/javamm/Gauss.javamm)								|						  |
+| Manipolazione data   						| 14/10/2021        | [Data.javamm](src/javamm/Data.javamm)									| Esercizio per casa	  |
