@@ -1,0 +1,41 @@
+/**
+ * Formula di Gauss con ricorsione
+ * 05/11/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+ */
+
+// Questo è un algoritmo per il calcolo della somma dei primi n numeri
+int somma(int n) {
+	int somma = 0;
+	for(int i = 1; i <= n; i++) {
+		somma += i;
+	}
+	return somma;
+}
+
+// Questo è la definizione stessa di somma dei primi n numeri
+int sommaRicorsiva(int n) {
+	if(n == 0) {
+		return 0;
+	} else {
+		return n + sommaRicorsiva(n - 1);
+	}
+}
+
+double sommaReali(int n) {
+	double somma = 0.0;
+	for(int i = 1; i <= n; i++) {
+		somma += 1.0 / (1L << i);
+	}
+	return somma;
+}
+
+double sommaRealiRicorsiva(int n) {
+	return (n == 1) ? (1.0/2) : (1.0 / (1L<<n) + sommaRealiRicorsiva(n - 1));
+}
+
+System.out.println(somma(100));
+System.out.println(sommaRicorsiva(100));
+System.out.println(sommaReali(53));
+System.out.println(sommaRealiRicorsiva(53));

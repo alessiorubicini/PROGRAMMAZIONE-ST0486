@@ -1,0 +1,18 @@
+/**
+ * Mutua ricorsione per determinare se un numero è pari o dispari
+ * 05/11/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+ */
+
+boolean pari(int n) {
+	if(n == 0) return true; else return dispari(n - 1);
+}
+
+boolean dispari(int n) {
+	if(n == 0) return false; else return pari(n - 1);
+}
+
+System.out.println(pari(8));
+System.out.println(pari(3));
+System.out.println(dispari(7));
