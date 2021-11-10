@@ -1,0 +1,96 @@
+/**
+ * TicTacToe
+ * 08/11/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+ */
+
+/*
+ * Quale informazione dobbiamo rappresentare? Lo schema del TTT
+ * Come la rappresentiamo?
+ * 	- Usiamo una matrice di dimensione 3x3
+ * 	- Usiamo lo 0 per rappresentare una cella vuota, 1 rappresenta la X, 2 rappresenta il cerchio
+ * Di quali operazioni abbiamo bisogno?
+ * 	- Operazioni di input
+ * 		- scrivere un metodo che preso in input l'intero del giocatore corrente e lo schema
+ * 		  chiede in input riga e colonna dove inserire la pedina
+ * 	- Controllo della vittoria
+ * 		- Scrivere un metodo che preso in input verifica se c'è un vincitore e restituisce un
+ * 		  intero che indica il risultato
+ * 	- Controllo della validità di una mossa
+ * 		- Scrivere un metodo che preso in input lo schema e gli interi che rappresentano riga e colonna
+ * 		  restituisce true o false se la posizione è valida o meno 
+ * 	- Costruire lo schema
+ * 		- Scrivere un metodo che non prende parametri e restituisce un nuovo schema
+ * 	- Operazioni di output
+ * 		- Scrivere un metodo che preso in input uno schema lo stampa a console
+ * 	- Alternare il turno di gioco
+ * 		- Scrivere un metodo che continua a chiedere la mossa ai due giocatori fino a quanto
+ * 		  la partita non è terminata o con una vittoria o con la patta
+ */
+
+int[][] creaSchema() {
+	int[][] schema = new int[][] {
+		{0, 0, 0},
+		{0, 0, 0},
+		{0, 0, 0}
+	};
+	return schema;
+}
+
+char ottieniSimbolo(int v) {
+	switch (v) {
+		case 1: return 'X';
+		case 2: return 'O';
+		default: return ' ';
+	}
+}
+
+void stampaRiga(int[] riga) {
+	System.out.println(" " + ottieniSimbolo(riga[0]) + " | " + ottieniSimbolo(riga[1]) + " | " + ottieniSimbolo(riga[2]));
+}
+
+void stampaSeparatore() {
+	System.out.println("---+---+---");
+}
+
+void stampaSchema(int[][] schema) {
+	stampaRiga(schema[0]);
+	stampaSeparatore();
+	stampaRiga(schema[1]);
+	stampaSeparatore();
+	stampaRiga(schema[2]);
+}
+
+boolean mossaValida(int[][] schema, int r, int c) {
+	return schema[r][c] == 0;
+}
+
+// Restituiamo: 1 se vince 1, 2 se vince 2, 0 se c'è qualcosa di libero, -1 se tutto pieno
+int risultatoElemento(int[][] schema, int r, int c, int dr, int dc) {
+	int risultato = 1;
+	for(int i = 0; i < 3; i++) {
+		risultato *= schema[r + i * dr][c + i * dc];
+	}
+	if((risultato != 0) || (risultato != 1) || risultato != 8) {
+		return -1;
+	} else {
+		return risultato;	
+	}
+}
+
+int combina(int r1, int r2) {
+	// !! Da completare !!
+	return 0;
+}
+
+int risultato(int[][] schema) {
+	int risultato = 0;
+	for(int i = 0; i<3; i++) {
+		risultato = combina(risultato, risultatoElemento(schema, i, 0, 0, 1));
+		risultato = combina(risultato, risultatoElemento(schema, 0, i, 1, 0));
+	}
+	return risultato;
+}
+
+stampaSchema(creaSchema());

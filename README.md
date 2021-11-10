@@ -15,6 +15,8 @@ Le esercitazioni iniziali sono realizzate con il linguaggio [Java--](http://www.
 ## Esercitazioni
 | Nome                              			| Data lezione		| File                                                      			| Note aggiuntive		  |
 | ----------------------------------------- | ----------------- | --------------------------------------------------------------------- | ----------------------- |
+| Dama										| 09/11/2021        | [Dama.javamm](src/javamm/Dama.javamm)									| 						  |
+| TicTacToe									| 08/11/2021        | [TicTacToe.javamm](src/javamm/TicTacToe.javamm)						| 						  |
 | Gauss con ricorsione						| 05/11/2021        | [GaussRicorsione.javamm](src/javamm/GaussRicorsione.javamm)			| 						  |
 | Pari o dispari con mutua ricorsione		| 05/11/2021        | [PariDispari.javamm](src/javamm/PariDispari.javamm)					| 						  |
 | Sudoku					 				| 04/11/2021        | [Sudoku.javamm](src/javamm/Sudoku.javamm)								| 						  |
