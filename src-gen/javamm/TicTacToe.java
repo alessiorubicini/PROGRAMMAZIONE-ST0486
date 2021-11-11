@@ -1,5 +1,7 @@
 package javamm;
 
+import javamm.util.Input;
+
 @SuppressWarnings("all")
 public class TicTacToe {
   /**
@@ -83,7 +85,24 @@ public class TicTacToe {
   }
   
   public static int combina(int r1, int r2) {
+    if (((r1 == 1) || (r2 == 1))) {
+      return 1;
+    }
+    if (((r1 == 8) || (r2 == 8))) {
+      return 8;
+    }
+    if (((r1 == -1) && (r2 == -1))) {
+      return -1;
+    }
     return 0;
+  }
+  
+  public static int decodificaValore(int risultato) {
+    if ((risultato == 8)) {
+      return -1;
+    } else {
+      return 0;
+    }
   }
   
   public static int risultato(int[][] schema) {
@@ -94,10 +113,42 @@ public class TicTacToe {
         risultato = TicTacToe.combina(risultato, TicTacToe.risultatoElemento(schema, 0, i, 1, 0));
       }
     }
-    return risultato;
+    risultato = TicTacToe.combina(risultato, TicTacToe.risultatoElemento(schema, 0, 0, 1, 1));
+    risultato = TicTacToe.combina(risultato, TicTacToe.risultatoElemento(schema, 2, 0, -1, 1));
+    return TicTacToe.decodificaValore(risultato);
+  }
+  
+  public static int leggiValore(String elemento, int giocatore) {
+    while (true) {
+      {
+        char _ottieniSimbolo = TicTacToe.ottieniSimbolo(giocatore);
+        String _plus = ((("In quale " + elemento) + "vuoi posizionare la ") + Character.valueOf(_ottieniSimbolo));
+        String _plus_1 = (_plus + "?");
+        int valore = Input.getInt(_plus_1);
+        if (((valore > 0) && (valore < 4))) {
+          return (valore - 1);
+        }
+        System.out.println("Errore! Inserire un valore tra 0 e 2!");
+      }
+    }
+  }
+  
+  /**
+   * Legge da input la mossa del giocatore passato come argomento
+   * e restituisce le coordinate scelte in un array di due elementi.
+   * 
+   * @param indice giocatore (1 o 2)
+   * @return un array di due elementi con le coordinate selezionate
+   */
+  public static int[] leggiMossa(int giocatore) {
+    int[] posizione = new int[2];
+    posizione[0] = TicTacToe.leggiValore("riga", giocatore);
+    posizione[1] = TicTacToe.leggiValore("colonna", giocatore);
+    return posizione;
   }
   
   public static void main(String[] args) {
-    TicTacToe.stampaSchema(TicTacToe.creaSchema());
+    int[][] schema = TicTacToe.creaSchema();
+    TicTacToe.stampaSchema(schema);
   }
 }

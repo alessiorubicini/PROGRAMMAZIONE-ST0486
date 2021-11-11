@@ -75,13 +75,23 @@ int risultatoElemento(int[][] schema, int r, int c, int dr, int dc) {
 	if((risultato != 0) || (risultato != 1) || risultato != 8) {
 		return -1;
 	} else {
-		return risultato;	
+		return risultato;
 	}
 }
 
 int combina(int r1, int r2) {
-	// !! Da completare !!
+	if((r1 == 1) || (r2 == 1)) return 1;
+	if((r1 == 8) || (r2 == 8)) return 8;
+	if((r1 == -1) && (r2 == -1)) return -1;
 	return 0;
+}
+
+int decodificaValore(int risultato) {
+	if(risultato == 8) {
+		return -1;
+	} else {
+		return 0;
+	}
 }
 
 int risultato(int[][] schema) {
@@ -90,7 +100,34 @@ int risultato(int[][] schema) {
 		risultato = combina(risultato, risultatoElemento(schema, i, 0, 0, 1));
 		risultato = combina(risultato, risultatoElemento(schema, 0, i, 1, 0));
 	}
-	return risultato;
+	risultato = combina(risultato, risultatoElemento(schema, 0, 0, 1, 1));
+	risultato = combina(risultato, risultatoElemento(schema, 2, 0, -1, 1));
+	return decodificaValore(risultato);
 }
 
-stampaSchema(creaSchema());
+int leggiValore(String elemento, int giocatore) {
+	while(true) {
+		int valore = Input.getInt("In quale " + elemento + "vuoi posizionare la " + ottieniSimbolo(giocatore) + "?");
+		if((valore > 0) && (valore < 4)) {
+			return valore -1;
+		}
+		System.out.println("Errore! Inserire un valore tra 0 e 2!");
+	}
+}
+
+/**
+ * Legge da input la mossa del giocatore passato come argomento
+ * e restituisce le coordinate scelte in un array di due elementi.
+ * 
+ * @param indice giocatore (1 o 2)
+ * @return un array di due elementi con le coordinate selezionate
+ */
+int[] leggiMossa(int giocatore) {
+	int[] posizione = new int[2];
+	posizione[0] = leggiValore("riga", giocatore);
+	posizione[1] = leggiValore("colonna", giocatore);
+	return posizione;
+}
+
+int[][] schema = creaSchema();
+stampaSchema(schema);
