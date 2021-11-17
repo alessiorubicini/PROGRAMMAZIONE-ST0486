@@ -129,5 +129,30 @@ int[] leggiMossa(int giocatore) {
 	return posizione;
 }
 
-int[][] schema = creaSchema();
-stampaSchema(schema);
+void stampaRisultato(int risultato) {
+	if(risultato == 1) {
+		System.out.println("Partita vinta");
+	} else {
+		System.out.println("Partita persa");
+	}
+}
+
+void partita() {
+	int giocatore = 1;
+	int[][] schema = creaSchema();
+	int risultato = 0;
+	while(risultato == 0) {
+		stampaSchema(schema);
+		int[] mossa = leggiMossa(giocatore);
+		if(mossaValida(schema, mossa[0], mossa[1])) {
+			schema[mossa[0]][mossa[1]] = giocatore;
+			giocatore = (giocatore == 1 ? 2 : 1);
+			risultato = risultato(schema);
+		} else {
+			System.out.println("Mossa non valida");
+		}
+	}
+	stampaRisultato(risultato);
+}
+
+partita();

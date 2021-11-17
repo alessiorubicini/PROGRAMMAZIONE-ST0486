@@ -1,0 +1,32 @@
+/**
+ * Conta caratteri
+ * Lezione 16/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
+
+void conta(String stringa, int [] risultati) {
+	for (int i = 0; i < stringa.length(); i++) {
+		switch (stringa.charAt(i)) {
+		  	case 'a' : case 'e' : case 'i' : case 'o' : case 'u' :
+		  	  risultati[0]++; break;
+		  	case ',' : case ';' : case ':' : case '!' : case '?' :
+		  	  risultati[2]++; break;
+		  	case ' ' : risultati[3]++; break;
+		  	default  : risultati[1]++;	  	
+	  	} 
+	}
+}
+
+String dante = "Nel mezzo del cammin di nostra vita\n
+mi ritrovai per una selva oscura,\n
+ché la diritta via era smarrita.
+\n
+Ahi quanto a dir qual era è cosa dura\n	
+esta selva selvaggia e aspra e forte\n			
+che nel pensier rinova la paura!";
+
+int [] risultati = {0,0,0,0};
+conta(dante,risultati);
+
+System.out.println("vocali: "+risultati[0]+" consonanti: "+risultati[1]+" punteggiatura: "+risultati[2]+" spazi: "+risultati[3]);

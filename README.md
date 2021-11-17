@@ -15,6 +15,8 @@ Le esercitazioni iniziali sono realizzate con il linguaggio [Java--](http://www.
 ## Esercitazioni
 | Nome                              			| Data lezione		| File                                                      			| Note aggiuntive		  |
 | ----------------------------------------- | ----------------- | --------------------------------------------------------------------- | ----------------------- |
+| Conta caratteri							| 16/11/2021        | [Caratteri.javamm](src/javamm/Caratteri.javamm)						| 						  |
+| Cammini minimi							| 16/11/2021        | [CamminiMinimi.javamm](src/javamm/CamminiMinimi.javamm)				| 						  |
 | Dama										| 09/11/2021        | [Dama.javamm](src/javamm/Dama.javamm)									| 						  |
 | TicTacToe									| 08/11/2021        | [TicTacToe.javamm](src/javamm/TicTacToe.javamm)						| 						  |
 | Gauss con ricorsione						| 05/11/2021        | [GaussRicorsione.javamm](src/javamm/GaussRicorsione.javamm)			| 						  |

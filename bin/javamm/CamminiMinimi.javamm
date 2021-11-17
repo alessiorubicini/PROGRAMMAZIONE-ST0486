@@ -1,0 +1,22 @@
+/**
+ * Trova il cammino minimo in un grafo
+ * Lezione 16/10/2021
+ * ST0486 Programmazione 2021/22
+ * Università degli Studi di Camerino - Informatica/Informatica per la comunicazione digitale
+*/
+
+int cerca(int s, int t, int [][] g) {
+  if (s==t) return 0; else {
+      int min = 999999;
+      for (int i = 0; i < (g[s].length)/2; i++) {
+         int p = g[s][i*2+1]+cerca(g[s][i*2],t,g);
+         if (p<min) min = p;
+      }
+      return min;
+   }
+}
+
+//            n,w [0]       [1]       [2]   [3][4]
+int [][] grafo = {{1,3,2,7},{3,9,4,3},{3,2},{},{3,8}};
+
+System.out.println(cerca(0,3,grafo));

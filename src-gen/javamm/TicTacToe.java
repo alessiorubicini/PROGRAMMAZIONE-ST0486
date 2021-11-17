@@ -147,8 +147,42 @@ public class TicTacToe {
     return posizione;
   }
   
-  public static void main(String[] args) {
+  public static void stampaRisultato(int risultato) {
+    if ((risultato == 1)) {
+      System.out.println("Partita vinta");
+    } else {
+      System.out.println("Partita persa");
+    }
+  }
+  
+  public static void partita() {
+    int giocatore = 1;
     int[][] schema = TicTacToe.creaSchema();
-    TicTacToe.stampaSchema(schema);
+    int risultato = 0;
+    while ((risultato == 0)) {
+      {
+        TicTacToe.stampaSchema(schema);
+        int[] mossa = TicTacToe.leggiMossa(giocatore);
+        boolean _mossaValida = TicTacToe.mossaValida(schema, mossa[0], mossa[1]);
+        if (_mossaValida) {
+          schema[mossa[0]][mossa[1]] = giocatore;
+          int _xjconditionalexpression = (int) 0;
+          if ((giocatore == 1)) {
+            _xjconditionalexpression = 2;
+          } else {
+            _xjconditionalexpression = 1;
+          }
+          giocatore = _xjconditionalexpression;
+          risultato = TicTacToe.risultato(schema);
+        } else {
+          System.out.println("Mossa non valida");
+        }
+      }
+    }
+    TicTacToe.stampaRisultato(risultato);
+  }
+  
+  public static void main(String[] args) {
+    TicTacToe.partita();
   }
 }
