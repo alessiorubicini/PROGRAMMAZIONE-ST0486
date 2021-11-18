@@ -4,7 +4,7 @@
 Questa repository contiene le esercitazioni svolte nel corso ST0486 Programmazione dei corsi di laurea triennale in Informatica e Informatica
 per la comunicazione digitale dell'anno 2021/22 ed è mantenuta dallo studente Alessio Rubicini.
 
-Il branch di default fa riferimento agli esercizi più recenti. Per consultare gli esercizi svolti nella prima parte del corso consultare il branch secondario.
+> ATTENZIONE: Il branch di default è il [branch Java](https://github.com/alessiorubicini/ST0486-PROGRAMMAZIONE-UNICAM2122/tree/java) il quale contiene gli esercizi più recenti. Per consultare gli esercizi svolti nella prima parte del corso consultare il [branch master](https://github.com/alessiorubicini/ST0486-PROGRAMMAZIONE-UNICAM2122/tree/master).
 
 Si invitano gli utenti a tenere presente che:
 - **la presente NON È una repository ufficiale dei docenti e non è in alcun modo affiliata all'Ateneo**;
