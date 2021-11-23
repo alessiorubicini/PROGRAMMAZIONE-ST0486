@@ -14,7 +14,7 @@ Si invitano gli utenti a tenere presente che:
 Fare sempre riferimento alla [cartella Google Drive](https://drive.google.com/drive/u/1/folders/1e-Q81TlmG_w784olLX7hXzYXw727Wb_k) condivisa dai docenti (account Google istituzionale richiesto).
 
 ## Esercitazioni
-| Nome                              	    | Data lezione	    | File                                   		| Note aggiuntive		  	|
-| ----------------------------------------- | ----------------- | --------------------------------------------- | ------------------------- |
-| Gioco impiccato				    		| 22/11/2021        | [GiocoImpiccato](GiocoImpiccato/src/)  		| Da iniziare a casa	 	|
-| TicTacToe				    				| 18/11/2021        | [TicTacToe](TicTacToe/src/)			 		| 						   	|
+| Nome                              	    | Data lezione	    | File                                   							| Note aggiuntive		  	|
+| ----------------------------------------- | ----------------- | ----------------------------------------------------------------- | ------------------------- |
+| Gioco impiccato				    		| 22/11/2021        | [GiocoImpiccato](GiocoImpiccato/src/it/unicam/cs/prog/impiccato)  | Da iniziare a casa	 	|
+| TicTacToe				    				| 18/11/2021        | [TicTacToe](TicTacToe/src/it/unicam/cs/prog/ttt)			 		| 						   	|
