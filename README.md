@@ -1,4 +1,5 @@
 # ST0486 Programmazione 2021/22
+
 ## [Università degli Studi di Camerino](https://www.unicam.it)
 
 Questa repository contiene le esercitazioni svolte nel corso ST0486 Programmazione dei corsi di laurea triennale in Informatica e Informatica
@@ -16,5 +17,8 @@ Fare sempre riferimento alla [cartella Google Drive](https://drive.google.com/dr
 ## Esercitazioni
 | Nome                              	    | Data lezione	    | File                                   							| Note aggiuntive		  	|
 | ----------------------------------------- | ----------------- | ----------------------------------------------------------------- | ------------------------- |
-| Gioco impiccato				    		| 22/11/2021        | [GiocoImpiccato](GiocoImpiccato/src/it/unicam/cs/prog/impiccato)  | Da iniziare a casa	 	|
+| Agenda					    			| 30/11/2021        | [Agenda](Agenda/src/it/unicam/cs/prog/agenda)			 			| 						   	|
+| Ladro					    				| 26/11/2021        | [Ladro](Ladro/src/it/unicam/cs/prog/ladro)			 			| 						   	|
+| Gioco impiccato (v2)				    	| 26/11/2021        | [Impiccato_v2](Impiccato_v2/src/it/unicam/cs/prog/impiccatov2)  	| 							|
+| Gioco impiccato (v1)				    	| 22/11/2021        | [Impiccato_v1](Impiccato_v1/src/it/unicam/cs/prog/impiccato)  	| Da iniziare a casa	 	|
 | TicTacToe				    				| 18/11/2021        | [TicTacToe](TicTacToe/src/it/unicam/cs/prog/ttt)			 		| 						   	|
