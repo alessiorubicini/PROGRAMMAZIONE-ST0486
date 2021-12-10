@@ -10,13 +10,16 @@ per la comunicazione digitale dell'anno 2021/22 ed è mantenuta dallo studente A
 Si invitano gli utenti a tenere presente che:
 - **la presente NON È una repository ufficiale dei docenti e non è in alcun modo affiliata all'Ateneo**;
 - la repository contiene **anche** codice scritto dall'autore della repository stessa e quindi non sviluppato in aula con i docenti;
-- il codice caricato su questa repository può non essere sempre corretto e funzionante.
+- il codice caricato su questa repository può non essere sempre aggiornato, corretto e funzionante.
 
 Fare sempre riferimento alla [cartella Google Drive](https://drive.google.com/drive/u/1/folders/1e-Q81TlmG_w784olLX7hXzYXw727Wb_k) condivisa dai docenti (account Google istituzionale richiesto).
 
 ## Esercitazioni
-| Nome                              	    | Data lezione	    | File                                   							| Note aggiuntive		  	|
+| Nome                              	    | Data lezione	    | Cartella                                   						| Note aggiuntive		  	|
 | ----------------------------------------- | ----------------- | ----------------------------------------------------------------- | ------------------------- |
+| Sensori					    			| 10/12/2021        | [Sensori](Sensori/src/it/unicam/cs/prog/sensori)			 		| 						   	|
+| Anagrafe					    			| 09/12/2021        | [Anagrafe](Anagrafe/src/it/unicam/cs/prog/anagrafe)			 	| 						   	|
+| Persone					    			| 07/12/2021        | [Persone](Persone/src/it/unicam/cs/prog/persone)			 		| 						   	|
 | Agenda					    			| 30/11/2021        | [Agenda](Agenda/src/it/unicam/cs/prog/agenda)			 			| 						   	|
 | Ladro					    				| 26/11/2021        | [Ladro](Ladro/src/it/unicam/cs/prog/ladro)			 			| 						   	|
 | Gioco impiccato (v2)				    	| 26/11/2021        | [Impiccato_v2](Impiccato_v2/src/it/unicam/cs/prog/impiccatov2)  	| 							|
