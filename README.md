@@ -14,9 +14,23 @@ Si invitano gli utenti a tenere presente che:
 
 Fare sempre riferimento alla [cartella Google Drive](https://drive.google.com/drive/u/1/folders/1e-Q81TlmG_w784olLX7hXzYXw727Wb_k) condivisa dai docenti (account Google istituzionale richiesto).
 
-## Esercitazioni
+## Esercizi prova scritta
+I progetti Java riportati di seguito sono lo svolgimento (dell'autore della repository Alessio Rubicini) delle esercitazioni alla prova scritta pubblicate dal prof. Culmone sulla cartella Google Drive del corso.
+
+| Nome                              	    | Cartella                                   						| Link Google Drive		  																					|
+| ----------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Panasonic					    			| [Panasonic](Panasonic/src/it/unicam/cs/prog/panasonic)			| [Link](https://drive.google.com/file/d/1zPT5MvLkeZObJlVOMgoT3i1Vajr2fold/view?usp=sharing)	|
+| Veicoli					    			| [Veicoli](Veicoli/src/it/unicam/cs/prog/veicoli)			 		| [Link](https://drive.google.com/file/d/19Icp4zJ0eNfzqfEWYOV2yK9WRaDX1ACl/view?usp=sharing)	|
+| Lavoratore					    		| [Lavoratore](Lavoratore/src/it/unicam/cs/prog/lavoratore)			| [Link](https://drive.google.com/file/d/1T0M24txZ7JRDXziAt5mN4QF59ZKzWl55/view?usp=sharing)	|
+| Orto					    				| [Orto](Orto/src/it/unicam/cs/prog/orto)				 			| [Link](https://docs.google.com/document/d/1mf7QTQXJiXdnMUr0PVILKhhrHpV7Ihf91fcuzkywOQU/edit?usp=sharing)	|
+| Coordinate					    		| [Coordinate](Coordinate/src/it/unicam/cs/prog/coordinate)			| [Link](https://docs.google.com/document/d/1DvXb8_4QQTOa4PZenoXw_rS27lek1WXGYlTI6E4Ahz4/edit?usp=sharing)	|
+
+## Esercitazioni in classe
 | Nome                              	    | Data lezione	    | Cartella                                   						| Note aggiuntive		  	|
 | ----------------------------------------- | ----------------- | ----------------------------------------------------------------- | ------------------------- |
+| Comuni					    			| 21/12/2021        | [Comuni](Comuni/src/it/unicam/cs/prog/comuni)			 			| 						   	|
+| Pari							    		| 20/12/2021        | [Pari](Pari/src/it/unicam/cs/prog/pari)							| 						   	|
+| Vaccino					    			| 20/12/2021        | [Vaccino](Vaccino/src/it/unicam/cs/prog/vaccino)			 		| 						   	|
 | Sensori					    			| 10/12/2021        | [Sensori](Sensori/src/it/unicam/cs/prog/sensori)			 		| 						   	|
 | Anagrafe					    			| 09/12/2021        | [Anagrafe](Anagrafe/src/it/unicam/cs/prog/anagrafe)			 	| 						   	|
 | Persone					    			| 07/12/2021        | [Persone](Persone/src/it/unicam/cs/prog/persone)			 		| 						   	|
