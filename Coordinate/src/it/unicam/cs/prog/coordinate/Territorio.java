@@ -7,15 +7,16 @@ import java.util.ArrayList;
  * @author alessiorubicini
  */
 public class Territorio {
-	private ArrayList<Coordinata> vertici;
+	
 	private String nome;
+	private ArrayList<Coordinata> vertici;
 	
 	public Territorio(String nome) {
+		this.nome = nome;
 		this.vertici = new ArrayList<Coordinata>();
 		for(int i = 0; i < 3; i++) {
-			this.vertici.add(Coordinata.generaCoordinataRandom());
+			this.aggiungiVertice(new Coordinata());
 		}
-		this.nome = nome;
 	}
 	
 	public String getNome() { return this.nome; }
@@ -28,21 +29,19 @@ public class Territorio {
 	}
 	
 	public double getAltezzaMedia() {
-		int risultato = 0;
-		int contatore = 0;
-		for (Coordinata coordinata : this.vertici) { 		      
-			risultato += coordinata.getAltitudine();
-			contatore++;
+		double risultato = 0.0;
+		for (Coordinata coordinata : this.vertici) {
+			risultato += (double)(coordinata.getAltitudine());
 		}
-		return (double)(risultato/contatore);
+		return risultato/this.vertici.size();
 	}
 	
 	@Override
 	public String toString() {
 		String risultato = "";
 		for (Coordinata coordinata : this.vertici) {
-			risultato += "Vertice -> latitudine: " + coordinata.getLatitudine() + ", longitudine: "
-					+ coordinata.getLongitudine() + ", altitudine: " + coordinata.getAltitudine() + "\n";
+			risultato += "Vertice -> (lat: " + coordinata.getLatitudine() + "°, long: " + coordinata.getLongitudine()
+			+ "°, alt: " + coordinata.getAltitudine() + ")\n";
 		}
 		return risultato;
 	}
@@ -52,12 +51,13 @@ public class Territorio {
 		Territorio terr = new Territorio("Italia");
 		Coordinata vertice;
 		try {
-			vertice = new Coordinata(43.12, 13.43, 0);
+			vertice = new Coordinata(43.12, 13.43, 2);
 		} catch (CoordinataErrataException e) {
 			System.out.println(e);
 			return;
 		}
 		terr.aggiungiVertice(vertice);
 		System.out.print(terr);
+		System.out.print(terr.getAltezzaMedia());
 	}
 }

@@ -28,6 +28,16 @@ public class Coordinata {
 			throw new CoordinataErrataException();
 		}
 	}
+	
+	/**
+	 * Crea un oggetto Coordinata con valori casuali
+	 */
+	public Coordinata() {
+		this.latitudine = (Math.random() * (90 + 1 - (-90)) + (-90));
+		this.longitudine = (Math.random() * (180 + 1 - (-180)) + (-180));
+		this.altitudine = (int)(Math.random() * (17000 + 1 - 0) + 0);
+	}
+	
 	public double getLatitudine() { return latitudine; }
 
 	public void setLatitudine(double latitudine) { this.latitudine = latitudine; }
@@ -39,21 +49,4 @@ public class Coordinata {
 	public int getAltitudine() { return altitudine;	}
 
 	public void setAltitudine(int altitudine) { this.altitudine = altitudine; }
-	
-	/**
-	 * Genera una coordinata con parametri random
-	 * Metodo utile per la generazione di una coordinata random nel costruttore della classe Territorio
-	 * @return oggetto Coordinata
-	 */
-	public static Coordinata generaCoordinataRandom() {
-		try {
-			return new Coordinata(
-					(Math.random() * (90 + 1 - (-90)) + (-90)),
-					(Math.random() * (180 + 1 - (-180)) + (-180)),
-					(int)(Math.random() * (17 + 1 - 0) + 0));
-		} catch (CoordinataErrataException e) {
-			System.out.println(e);
-			return null;
-		}
-	}	
 }
