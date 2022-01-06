@@ -1,12 +1,8 @@
 package it.unicam.cs.prog.panasonic;
+
 import java.util.ArrayList;
 
-/**
- * Data la classe TV, che descrive un TV generico, estenderla con la classe Panasonic.
- * @author alessiorubicini
- */
 public class Panasonic extends TV {
-
 	private int numeroDiCanali;
 	private String risoluzione;
 	private ArrayList<Canale> canali;
@@ -48,8 +44,6 @@ public class Panasonic extends TV {
 		for(Canale canale: this.canali) {
 			if(canale.getFrequenza() == frequenza) {
 				return false;
-			} else {
-				return true;
 			}
 		}
 		return true;

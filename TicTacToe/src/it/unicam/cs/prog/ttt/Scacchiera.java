@@ -1,7 +1,6 @@
 package it.unicam.cs.prog.ttt;
 
 public class Scacchiera {
-	
 	private int[][] valori;
 	private int dimensione;
 	
@@ -50,7 +49,7 @@ public class Scacchiera {
 		for(int i=0; i<this.dimensione; i++) {
 			risultato *= this.valori[r+i*dr][c+i*dc];
 		}	
-		if ((risultato != 0)||(risultato != 1)||(risultato != Math.pow(2, dimensione))) {
+		if ((risultato != 0) || (risultato != 1) || (risultato != Math.pow(2, dimensione))) {
 			return -1;
 		} else {
 			return risultato;
@@ -58,14 +57,14 @@ public class Scacchiera {
 	}
 
 	private int combina(int r1, int r2) {
-		if ((r1 == 1)||(r2 == 1)) return 1;
-		if ((r1 == 8)||(r2 == 8)) return 8; 
-		if ((r1 == -1)&&(r2 == -1)) return -1;
+		if ((r1 == 1) || (r2 == 1)) return 1;
+		if ((r1 == 8) || (r2 == 8)) return 8; 
+		if ((r1 == -1) && (r2 == -1)) return -1;
 		return 0;	
 	}
 
 	private int decodificaValore(int risultato) {
-		if (risultato==8) {
+		if (risultato == 8) {
 			return 2;
 		} else {
 			return risultato;

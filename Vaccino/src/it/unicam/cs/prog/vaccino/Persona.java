@@ -5,6 +5,7 @@ public class Persona {
 	private String cognome;
 	
 	Persona(String n, String c) {
-		nome = n; cognome = c;
+		this.nome = n; 
+		this.cognome = c;
 	}
 }

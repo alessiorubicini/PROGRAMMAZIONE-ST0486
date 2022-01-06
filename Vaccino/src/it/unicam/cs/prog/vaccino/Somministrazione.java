@@ -6,9 +6,9 @@ public class Somministrazione {
 	private Date data;
 	private Vaccino vaccino;
 	
-	Somministrazione(Persona p, Date d, Vaccino v) {
-		persona = p;
-		data = d;
-		vaccino = v;  
+	Somministrazione(Persona persona, Date data, Vaccino vaccino) {
+		this.persona = persona;
+		this.data = data;
+		this.vaccino = vaccino;  
 	}		
 }

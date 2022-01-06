@@ -1,11 +1,7 @@
 package it.unicam.cs.prog.coordinate;
+
 import java.util.ArrayList;
 
-/**
- * Un territorio è una superficie delimitata da un insieme di coordinate corrispondenti ai suoi vertici.
- * Il numero massimo di vertici per un territorio è 20. Un territorio è caratterizzato anche da un nome.
- * @author alessiorubicini
- */
 public class Territorio {
 	
 	private String nome;

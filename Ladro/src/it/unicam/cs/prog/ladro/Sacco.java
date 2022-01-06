@@ -1,7 +1,6 @@
 package it.unicam.cs.prog.ladro;
 
 public class Sacco {
-	
     private Oggetto [] sacco;
     private int numeroOggetti = 0;
     private double volumeTotale, pesoTotale;
@@ -18,9 +17,9 @@ public class Sacco {
     
     Sacco(double volume, double peso) { 
         if (volume > 0.0 && peso > 0.0) {
-           volumeTotale = volume;
-           pesoTotale = peso;
-           sacco = new Oggetto[(int)(volume*peso)+1]; 
+           this.volumeTotale = volume;
+           this.pesoTotale = peso;
+           this.sacco = new Oggetto[(int)(volume*peso)+1]; 
         }
     }
     

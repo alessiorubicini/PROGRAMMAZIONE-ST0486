@@ -1,23 +1,16 @@
 package it.unicam.cs.prog.coordinate;
 
-/**
- * Una coordinata sul globo terreste è determinata da due valori reali: la latitudine con valori compresi tra -90.0 e 90.0
- * e la longitudine con valori compresi tra -180.0 e 180.0. Una coordinata è inoltre caratterizzata anche dall'altitudine
- * rispetto al livello del mare, espressacome valore intero positivo.
- * @author alessiorubicini 
- */
 public class Coordinata {
-	
 	private double latitudine;
 	private double longitudine;
 	private int altitudine;
 	
 	/**
 	 * Crea un oggetto Coordinata
-	 * @param latitudine						Latitudine compresa tra -90.0 e 90.0
-	 * @param longitudine					Longitudine compresa tra -180.0 e 180
-	 * @param altitudine						Altitudine rispetto al livello del mare
-	 * @throws CoordinataErrataException	s	se le condizioni sui parametri non sono rispettate
+	 * @param latitudine	Latitudine compresa tra -90.0 e 90.0
+	 * @param longitudine	Longitudine compresa tra -180.0 e 180
+	 * @param altitudine	Altitudine rispetto al livello del mare
+	 * @throws CoordinataErrataException	s se le condizioni sui parametri non sono rispettate
 	 */
 	public Coordinata(double latitudine, double longitudine, int altitudine) throws CoordinataErrataException {
 		if(((latitudine < 90.0) && (latitudine > -90.0)) && ((longitudine < 180.0) && (longitudine > -180.0)) && (altitudine >= 0)) {

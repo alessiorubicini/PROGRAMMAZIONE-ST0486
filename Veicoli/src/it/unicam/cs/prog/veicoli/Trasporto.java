@@ -1,28 +1,19 @@
 package it.unicam.cs.prog.veicoli;
 
-/**
- * Rappresenta un trasporto nello storico del camion
- * @author alessiorubicini
- */
 public class Trasporto {
 	
-	private double peso;
-	private int chilometri;
+	private double pesoTrasportato;
+	private int chilometriPercorsi;
 	
-	/**
-	 * Crea un oggetto Trasporto
-	 * @param peso			peso del carico in quintali
-	 * @param chilometri		chilometri percorsi
-	 */
-	public Trasporto(double peso, int chilometri)  {
-		this.peso = peso;
-		this.chilometri = chilometri;
+	public Trasporto(double pesoTrasportato, int chilometriPercorsi)  {
+		this.pesoTrasportato = pesoTrasportato;
+		this.chilometriPercorsi = chilometriPercorsi;
 	}
 	
-	public double getPeso() { return this.peso; }
-	public double getChilometri() { return this.chilometri; }
+	public double getPeso() { return this.pesoTrasportato; }
+	public double getChilometri() { return this.chilometriPercorsi; }
 	
-	public void setPeso(double peso) { this.peso = peso; }
-	public void setChilometri(int chilometri) { this.chilometri = chilometri; }
+	public void setPeso(double peso) { this.pesoTrasportato = peso; }
+	public void setChilometri(int chilometri) { this.chilometriPercorsi = chilometri; }
 	
 }

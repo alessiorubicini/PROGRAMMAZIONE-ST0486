@@ -1,10 +1,7 @@
 package it.unicam.cs.prog.lavoratore;
+
 import java.util.ArrayList;
 
-/**
- * Rappresenta un lavoratore
- * @author alessiorubicini
- */
 public class Lavoratore extends Persona {
 	
 	private int retribuzioneOraria;
@@ -37,10 +34,6 @@ public class Lavoratore extends Persona {
 
 	public void setRetribuzioneOrariaStraordinari(int retribuzioneOrariaStraordinari) { this.retribuzioneOrariaStraordinari = retribuzioneOrariaStraordinari; }
 	
-	/**
-	 * Inserisce le ore di una singola giornata di lavoro
-	 * @param oreTotali: ore totali della giornata
-	 */
 	public void inserisciOreDiLavoro(int ore) {
 		if(ore <= 12) {
 			if(ore <= 8) {

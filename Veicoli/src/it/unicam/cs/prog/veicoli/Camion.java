@@ -1,13 +1,10 @@
 package it.unicam.cs.prog.veicoli;
+
 import java.util.ArrayList;
 
-/**
- * Data la classe astratta Veicolo estenderla con la classe Camion.
- * @author alessiorubicini
- */
 public class Camion extends Veicolo {
 	
-	private double caricoMassimo;		// In tonnellate
+	private double caricoMassimo;
 	private ArrayList<Trasporto> storicoTrasporti;
 	
 	/**
@@ -47,14 +44,10 @@ public class Camion extends Veicolo {
 		for (Trasporto trasporto : this.storicoTrasporti) {
 			risultato += (trasporto.getChilometri() * trasporto.getPeso());
 		}
-		return risultato/this.pesoStoricoTotale();
+		return risultato/this.pesoTotaleTrasportato();
 	}
 	
-	/**
-	 * Calcola il peso totale trasportato dallo storico dal camion
-	 * @return peso totale
-	 */
-	private double pesoStoricoTotale() {
+	private double pesoTotaleTrasportato() {
 		double risultato = 0.0;
 		for (Trasporto trasporto : this.storicoTrasporti) {
 			risultato += trasporto.getPeso();

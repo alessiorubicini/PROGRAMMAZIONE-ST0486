@@ -1,11 +1,6 @@
 package it.unicam.cs.prog.panasonic;
 
-/**
- * Rappresenta un singolo canale descritto dalla coppia numero-frequenza
- * @author alessiorubicini
- */
 public class Canale {
-
 	private int numero;
 	private int frequenza;
 	
@@ -24,13 +19,19 @@ public class Canale {
 		}
 	}
 
-	public int getNumero() { return numero; }
+	public int getNumero() {
+		return numero;
+	}
 
-	public void setNumero(int numero) { this.numero = numero; }
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
 
-	public int getFrequenza() { return frequenza; }
+	public int getFrequenza() {
+		return frequenza;
+	}
 
-	public void setFrequenza(int frequenza) { this.frequenza = frequenza; }
-	
-	
+	public void setFrequenza(int frequenza) {
+		this.frequenza = frequenza;
+	}
 }

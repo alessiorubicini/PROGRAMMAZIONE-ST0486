@@ -1,10 +1,7 @@
 package it.unicam.cs.prog.orto;
+
 import java.util.ArrayList;
 
-/**
- * 
- * @author alessiorubicini
- */
 public class Orto {
 	
 	private double superficie;
@@ -27,11 +24,7 @@ public class Orto {
 	public double getSuperficie() {return superficie; }
 	public void setSuperficie(double superficie) { this.superficie = superficie; }
 	
-	/**
-	 * Ottiene il numero di posti rimasti per le singole piante
-	 * @return numero di piante ancora piantabili
-	 */
-	public int piantePiantabili() {
+	public int pianteAncoraPiantabili() {
 		int pianteTotali = 0;
 		for(Ortaggio ortaggio: this.ortaggi) {
 			pianteTotali += ortaggio.getNumeroDiPiante();
@@ -45,7 +38,7 @@ public class Orto {
 	 * @throws Exception se non c'è più spazio nell'orto
 	 */
 	public void pianta(Ortaggio ortaggio) throws Exception {
-		if(this.piantePiantabili() > 0) {
+		if(this.pianteAncoraPiantabili() > 0) {
 			this.ortaggi.add(ortaggio);
 		} else {
 			throw new Exception("Spazio insufficiente nell'orto");
@@ -71,13 +64,13 @@ public class Orto {
 			System.out.println(e);
 			return;
 		}
-		System.out.println("Piantabili: " + orto.piantePiantabili());
+		System.out.println("Piantabili: " + orto.pianteAncoraPiantabili());
 		try {
 			orto.pianta(new Ortaggio("nsalata", 10, 20211012, 20211112));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		System.out.println("Piantabili: " + orto.piantePiantabili());
+		System.out.println("Piantabili: " + orto.pianteAncoraPiantabili());
 		System.out.println(orto);
 	}
 	
