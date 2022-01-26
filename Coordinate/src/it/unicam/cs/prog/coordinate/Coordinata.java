@@ -5,13 +5,6 @@ public class Coordinata {
 	private double longitudine;
 	private int altitudine;
 	
-	/**
-	 * Crea un oggetto Coordinata
-	 * @param latitudine	Latitudine compresa tra -90.0 e 90.0
-	 * @param longitudine	Longitudine compresa tra -180.0 e 180
-	 * @param altitudine	Altitudine rispetto al livello del mare
-	 * @throws CoordinataErrataException	s se le condizioni sui parametri non sono rispettate
-	 */
 	public Coordinata(double latitudine, double longitudine, int altitudine) throws CoordinataErrataException {
 		if(((latitudine < 90.0) && (latitudine > -90.0)) && ((longitudine < 180.0) && (longitudine > -180.0)) && (altitudine >= 0)) {
 			this.latitudine = latitudine;
@@ -22,9 +15,6 @@ public class Coordinata {
 		}
 	}
 	
-	/**
-	 * Crea un oggetto Coordinata con valori casuali
-	 */
 	public Coordinata() {
 		this.latitudine = (Math.random() * (90 + 1 - (-90)) + (-90));
 		this.longitudine = (Math.random() * (180 + 1 - (-180)) + (-180));

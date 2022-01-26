@@ -3,15 +3,9 @@ package it.unicam.cs.prog.orto;
 import java.util.ArrayList;
 
 public class Orto {
-	
 	private double superficie;
 	private ArrayList<Ortaggio> ortaggi;
 	
-	/**
-	 * Crea un oggetto Orto
-	 * @param superficie in metri quadri strettamente maggiore di 4
-	 * @throws Exception se la superficie inserita è minore di 4
-	 */
 	public Orto(double superficie) throws Exception {
 		if(superficie >= 4) {
 			this.superficie = superficie;
@@ -32,11 +26,6 @@ public class Orto {
 		return (int)((superficie * 10) - pianteTotali);
 	}
 	
-	/**
-	 * Pianta un ortaggio nell'orto
-	 * @param ortaggio
-	 * @throws Exception se non c'è più spazio nell'orto
-	 */
 	public void pianta(Ortaggio ortaggio) throws Exception {
 		if(this.pianteAncoraPiantabili() > 0) {
 			this.ortaggi.add(ortaggio);

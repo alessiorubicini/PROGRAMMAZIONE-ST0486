@@ -1,7 +1,6 @@
 package it.unicam.cs.prog.veicoli;
 
 public class Trasporto {
-	
 	private double pesoTrasportato;
 	private int chilometriPercorsi;
 	
@@ -10,10 +9,19 @@ public class Trasporto {
 		this.chilometriPercorsi = chilometriPercorsi;
 	}
 	
-	public double getPeso() { return this.pesoTrasportato; }
-	public double getChilometri() { return this.chilometriPercorsi; }
+	public double getPeso() {
+		return this.pesoTrasportato;
+	}
 	
-	public void setPeso(double peso) { this.pesoTrasportato = peso; }
-	public void setChilometri(int chilometri) { this.chilometriPercorsi = chilometri; }
+	public double getChilometri() {
+		return this.chilometriPercorsi;
+	}
 	
+	public void setPeso(double peso) {
+		this.pesoTrasportato = peso;
+	}
+	
+	public void setChilometri(int chilometri) {
+		this.chilometriPercorsi = chilometri;
+	}	
 }

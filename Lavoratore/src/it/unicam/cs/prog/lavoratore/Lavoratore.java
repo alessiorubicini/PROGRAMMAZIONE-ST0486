@@ -9,15 +9,6 @@ public class Lavoratore extends Persona {
 	private ArrayList<Integer> oreStandard;
 	private ArrayList<Integer> oreStraordinari;
 	
-	/**
-	 * Crea un oggetto Lavoratore
-	 * @param cognome					Cognome del lavoratore (di almeno 1 caratteri)
-	 * @param nome						Nome del lavoratore (di almeno 1 caratteri)
-	 * @param eta						Età (maggiore di 0)
-	 * @param retrOraria				Retribuzione oraria standard
-	 * @param retrOrariaStraordinaria	Retrbuzione oraria per gli straordinari
-	 * @throws Exception				se le condizioni sui parametri non sono rispettate
-	 */
 	public Lavoratore(String cognome, String nome, int eta, int retrOraria, int retrOrariaStraordinaria) throws Exception {
 		super(cognome, nome, eta);
 		this.retribuzioneOraria = retrOraria;
@@ -45,12 +36,6 @@ public class Lavoratore extends Persona {
 		}
 	}
 	
-	/**
-	 * Calcola una specifica retribuzione mensilee
-	 * @param ore: lista delle ore di lavoro
-	 * @param retribuzione: retribuzione oraria
-	 * @return retribuzione totale
-	 */
 	public int calcolaRetribuzione(ArrayList<Integer> ore, int retribuzione) {
 		int risultato = 0;
 		for(Integer ora: ore) {
@@ -58,11 +43,7 @@ public class Lavoratore extends Persona {
 		}
 		return risultato;
 	}
-	
-	/**
-	 * Calcola lo stipendio mensile del lavoratore e svuota le liste delle ore di lavoro
-	 * @return stipendio mensile del lavoratore
-	 */
+
 	public int calcolaStipendioMensile() {
 		int stipendio = 0;
 		stipendio += this.calcolaRetribuzione(this.oreStandard, this.retribuzioneOraria);
@@ -72,10 +53,6 @@ public class Lavoratore extends Persona {
 		return stipendio;
 	}
 	
-	/**
-	 * Restituisce le ore di lavoro del lavoratore giorno per giorno
-	 * @return lista delle ore di lavoro come stringa
-	 */
 	public String ottieniListaOrediLavoro() {
 		String risultato = "";
 		for(int i = 0; i < this.oreStandard.size(); i++) {

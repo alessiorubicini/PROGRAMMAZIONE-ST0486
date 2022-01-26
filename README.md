@@ -16,6 +16,7 @@ Fare sempre riferimento alla [cartella Google Drive](https://drive.google.com/dr
 
 ## Esercizi prova scritta
 I progetti Java riportati di seguito sono lo svolgimento (dell'autore della repository Alessio Rubicini) delle esercitazioni alla prova scritta pubblicate dal prof. Culmone sulla cartella Google Drive del corso.
+I commenti *JavaDoc* sono stati omessi per una migliore consultazione del codice data la natura didattica dello stesso.
 
 | Nome                              	    | Cartella                                   						| Link Google Drive		  																					|
 | ----------------------------------------- | ----------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
